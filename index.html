@@ -85,8 +85,8 @@
     clip-path: ellipse(55% 100% at 50% 100%);
   }
   .hero-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: center;
+    display: grid; grid-template-columns: 1fr 1fr 220px;
+    gap: 2.5rem; align-items: center;
     max-width: 1200px; margin: 0 auto; width: 100%;
   }
   .hero-tag {
@@ -309,8 +309,8 @@
     display: flex; justify-content: space-between;
     align-items: center; margin-bottom: 0.9rem;
   }
-  .skill-name { font-size: 0.88rem; color: rgba(245,240,232,0.75); }
-  .skill-bar { width: 80px; height: 2px; background: rgba(255,255,255,0.1); }
+  .skill-name { font-size: 0.88rem; color: rgba(245,240,232,0.75); flex: 1; }
+  .skill-bar { width: 60px; min-width: 60px; height: 2px; background: rgba(255,255,255,0.1); margin-left: 1rem; }
   .skill-fill { height: 100%; background: var(--gold); }
 
   /* CONTACT */
@@ -365,6 +365,7 @@
     section { padding: 4rem 2rem; }
     .hero { padding: 7rem 2rem 4rem; }
     .hero-grid { grid-template-columns: 1fr; }
+    .hero-image { display: none; }
     .hero h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
     .hero-stats { flex-direction: row; align-items: flex-start; flex-wrap: wrap; }
     .about-grid { grid-template-columns: 1fr; }
@@ -408,6 +409,16 @@
 <a class="btn-outline" href="#contact">Get in Touch</a>
 </div>
 </div>
+<div class="hero-image">
+  <img src="teacher.png" alt="Andrew Lee teaching" style="
+    width: 100%;
+    max-width: 420px;
+    height: 480px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  "/>
+</div>
 <div class="hero-stats">
 <div class="stat-card">
 <div class="stat-num">14</div>
@@ -432,7 +443,7 @@
 <div class="about-grid">
 <div class="philosophy-card fade-in">
 <p class="philosophy-text">
-          Inclusion becomes a culture where learning environments designed for all meet attentive, personalised support for each. That intersection — inside the classroom and beyond — is what I hope to build, together.
+          Inclusion becomes a culture where learning environments designed for all meet attentive, personalised support for each.<br>That intersection — inside the classroom and beyond — is what I hope to build, together.
         </p>
 </div>
 <div class="about-body fade-in">
@@ -840,7 +851,7 @@
       stat1_label: 'Years Teaching', stat2_label: 'Publications', stat3_label: 'Countries',
 
       about_label: 'About', about_title: 'Philosophy & Background',
-      about_quote: 'Inclusion becomes a culture where learning environments designed for all meet attentive, personalised support for each. That intersection — inside the classroom and beyond — is what I hope to build, together.',
+      about_quote: 'Inclusion becomes a culture where learning environments designed for all meet attentive, personalised support for each.<br>That intersection — inside the classroom and beyond — is what I hope to build, together.',
       about_p1: 'I am Andrew (Hooseok) Lee, a Learning Support and Inclusive Education specialist with over 14 years of experience across both national and international school settings. My practice is grounded in evidence-based SEN provision, differentiated instruction, and a deep commitment to making learning genuinely accessible for every student.',
       about_p2: 'At Korean International School Ho Chi Minh City, I design and lead the school\'s learning support program — working closely with classroom teachers, subject specialists, school counsellors, nurses, career advisors, administrators, and support staff to embed inclusive practice into the everyday fabric of school life. This cross-functional collaboration has been central to my work throughout my career, extending beyond the school gate to encompass universities, government agencies, local authorities, and businesses.',
       about_p3: 'Alongside my practice, I lead domestic and international research on attitudes toward inclusive education — grounding everything I do in evidence and connecting classroom reality with the broader field.',
@@ -864,7 +875,7 @@
       // EdTech
       e1_org: 'Seoul Metropolitan Office of Education & Seoul West District Office of Education · Korea',
       e1_role: 'EdTech Lead Teacher',
-      e1_desc: 'Designated as EdTech lead teacher by Seoul Metropolitan Office of Education and Seoul West District Office of Education over four consecutive years. As the only special educator among predominantly general education teacher cohorts, collaborated closely with colleagues across subjects and roles to integrate digital tools and AI-based resources into diverse classroom settings, and contributed to city-wide AI education initiatives.',
+      e1_desc: 'Designated as EdTech lead teacher by Seoul Metropolitan Office of Education and Seoul West District Office of Education over four consecutive years. As one of few special educators among predominantly general education teacher cohorts, collaborated closely with colleagues across subjects and roles to integrate digital tools and AI-based resources into diverse classroom settings, and contributed to city-wide AI education initiatives.',
       e2_org: 'Seoul Metropolitan Office of Education · Korea',
       e2_role: 'Software Education Lead School Coordinator',
       e2_desc: 'Coordinated school-wide software education initiatives as part of Seoul Metropolitan Office of Education\'s flagship software education programme. Designed and led a professional learning community focused on software-integrated instruction, supporting colleagues in embedding computational thinking and coding into special education curricula.',
@@ -954,7 +965,7 @@
       sec5: '⑤ 연수 및 강의', sec6: '⑥ 전문성 개발',
 
       t1_org: '한국국제학교 호치민 · 베트남',
-      t1_role: '특수학급 운영 및 학습지원과 통합교육 담당',
+      t1_role: '특수학급 운영 및 학습지원 · 통합교육 담당',
       t1_desc: '초·중·고 전 학년에 걸쳐 특수교육 교육과정과 통합교육 프로그램을 운영하며 포괄적인 학습지원을 제공하고 있습니다. 통합학급 담임교사, 교과교사, 보건·상담·진로교사, 관리자, 행정직원 등 교내 다양한 구성원과 협업하여 통합교육을 학교 일상 속에 뿌리내리고 있습니다. 개별 학습지원 계획을 수립·실행하고, 평가 조정을 관리하며, 진로직업교육 프로그램을 개발·운영합니다. 고등학생 대입 준비 방과후학교 강좌를 직접 진행하고 있습니다. 2024년에는 베트남 국립특수교육센터(NCSE)와 KIS HCMC 간 업무협약(MOU)을 체결하였습니다.',
       t2_org: '연세대학교 재활학교 · 서울',
       t2_role: '특수교사',
@@ -965,7 +976,7 @@
 
       e1_org: '서울특별시교육청 · 서울서부교육지원청',
       e1_role: '에듀테크 선도교사',
-      e1_desc: '서울특별시교육청 및 서울서부교육지원청으로부터 4년 연속 에듀테크 선도교사로 지정되었습니다. 주로 일반 교사들로 구성된 교사 집단에서 특수교사로서 유일하게 참여하며, 다양한 교과·역할의 교사들과 협업하여 AI 디지털교과서 활용, 에듀테크 도구의 교실 적용, AI 기반 수업 설계 등을 함께 실천하였습니다.',
+      e1_desc: '서울특별시교육청 및 서울서부교육지원청으로부터 4년 연속 에듀테크 선도교사로 지정되었습니다. 주로 일반 교사들로 구성된 교사 집단에서 소수의 특수교사로서 참여하며, 다양한 교과·역할의 교사들과 협업하여 AI 디지털교과서 활용, 에듀테크 도구의 교실 적용, AI 기반 수업 설계 등을 함께 실천하였습니다.',
       e2_org: '서울특별시교육청',
       e2_role: '소프트웨어교육 선도학교 담당교사',
       e2_desc: '서울특별시교육청 소프트웨어교육 선도학교 사업에 참여하여 학교 전체의 소프트웨어 교육을 기획·운영하였습니다. 소프트웨어 연계 수업을 주제로 교원학습공동체를 구성·운영하며, 특수교육 맥락에서 코딩 및 컴퓨팅 사고력 교육을 실천하였습니다.',
