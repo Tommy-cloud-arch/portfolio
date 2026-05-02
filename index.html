@@ -1086,7 +1086,7 @@
     if (aboutSection) {
       aboutSection.querySelector('.section-label').textContent = t['about_label'];
       aboutSection.querySelector('.section-title').textContent = t['about_title'];
-      aboutSection.querySelector('.philosophy-text').textContent = t['about_quote'];
+      aboutSection.querySelector('.philosophy-text').innerHTML = t['about_quote'];
       const ps = aboutSection.querySelectorAll('.about-body p');
       if (ps[0]) ps[0].textContent = t['about_p1'];
       if (ps[1]) ps[1].textContent = t['about_p2'];
