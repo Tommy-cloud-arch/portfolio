@@ -783,11 +783,11 @@
 <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
 </div>
 <div class="skill-item">
-<span class="skill-name" data-sk="sk13">Special Education Teacher Certificate, GR 1 (Highest)</span>
+<span class="skill-name" data-sk="sk13">Special Education Teacher Certificate,<br>GR 1 (Highest)</span>
 <div class="skill-bar"><div class="skill-fill" style="width:100%"></div></div>
 </div>
 <div class="skill-item">
-<span class="skill-name" data-sk="sk14">Korean Language Teacher License, LV 2 (Intermediate)</span>
+<span class="skill-name" data-sk="sk14">Korean Language Teacher License,<br>LV 2 (Intermediate)</span>
 <div class="skill-bar"><div class="skill-fill" style="width:100%"></div></div>
 </div>
 <div class="skill-item">
@@ -924,7 +924,7 @@
       sk6:'Survey Design & Validation', sk7:'Statistical Analysis (R)',
       sk8:'AI / EdTech Integration', sk9:'Curriculum Development', sk10:'Digital Content Creation',
       sk11:'Korean (Native)', sk12:'English',
-      sk13:'Special Education Teacher Certificate, GR 1 (Highest)', sk14:'Korean Language Teacher License, LV 2 (Intermediate)',
+      sk13:'Special Education Teacher Certificate,<br>GR 1 (Highest)', sk14:'Korean Language Teacher License,<br>LV 2 (Intermediate)',
       sk15:'M.Ed. Educational Technology & Instructional System Design (Yonsei University)',
 
       contact_label: 'Contact', contact_title: "Let's Connect",
@@ -1130,7 +1130,7 @@
       skillsSection.querySelector('.section-title').textContent = t['skills_title'];
     }
     document.querySelectorAll('[data-sg]').forEach(el => { const k = el.getAttribute('data-sg'); if(t[k]) el.textContent = t[k]; });
-    document.querySelectorAll('[data-sk]').forEach(el => { const k = el.getAttribute('data-sk'); if(t[k]) el.textContent = t[k]; });
+    document.querySelectorAll('[data-sk]').forEach(el => { const k = el.getAttribute('data-sk'); if(t[k]) el.innerHTML = t[k]; });
 
     // Contact
     const contactSection = document.querySelector('#contact .contact-inner');
