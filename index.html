@@ -25,6 +25,7 @@
 
   /* HERO */
   .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 8rem 4rem 4rem; text-align: center; position: relative; }
+  .hero-bg { position: absolute; inset: 0; background-image: url('teacher.png'); background-size: cover; background-position: center 20%; opacity: 0.25; filter: grayscale(20%); pointer-events: none; }
   .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(196,154,60,0.08) 0%, transparent 65%); pointer-events: none; }
 
   .hero-tag { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s 0.2s forwards; }
@@ -72,6 +73,7 @@
 </nav>
 
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-tag" data-i="hero_tag">Learning Support · Inclusive Education · Special Education · EdTech</div>
   <h1 data-i-html="hero_h1">Andrew <em>Lee</em></h1>
   <p class="hero-sub" data-i="hero_sub">Learning Support and Inclusive Education specialist with 15 years of experience across national and international school settings — currently at Korean International School Ho Chi Minh City, Vietnam.</p>
