@@ -43,8 +43,11 @@
   .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; line-height: 1.2; color: var(--cream); margin-bottom: 1rem; }
   .card-title em { font-style: italic; color: var(--gold-light); }
   .card-desc { font-size: 0.88rem; line-height: 1.8; color: rgba(245,240,232,0.55); margin-bottom: 1.8rem; }
-  .card-link { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
-  .card:hover .card-link { gap: 0.9rem; }
+  .card-actions { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 1.5rem; }
+  .card-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); background: var(--gold); display: block; text-align: center; padding: 0.7rem 1.2rem; text-decoration: none; font-weight: 500; transition: background 0.3s; }
+  .card-link:hover { background: var(--gold-light); }
+  .card-pdf { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff !important; background: #5ba4cf !important; display: block; text-align: center; padding: 0.7rem 1.2rem; font-weight: 500; transition: background 0.3s; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; width: 100%; box-sizing: border-box; }
+  .card-pdf:hover { background: #4a8fb8 !important; }
   .card-divider { width: 2rem; height: 1px; background: rgba(196,154,60,0.4); margin-bottom: 1.5rem; }
 
   /* FOOTER */
@@ -84,14 +87,20 @@
       <div class="card-divider"></div>
       <div class="card-title" data-i-html="card1_title">Learning Support &amp;<br><em>Inclusive Education</em></div>
       <div class="card-desc" data-i="card1_desc">My philosophy, practice, and approach to learning support in international secondary settings.</div>
-      <div class="card-link" data-i="card1_link">View Learning Support Page →</div>
+      <div class="card-actions">
+        <div class="card-link" data-i="card1_link">View Learning Support Page →</div>
+        <button class="card-pdf" onclick="event.preventDefault();window.open('ls.html');setTimeout(()=>{},100)" data-i="card1_pdf">⬇ Download PDF</button>
+      </div>
     </a>
     <a class="card" href="portfolio.html">
       <div class="card-tag" data-i="card2_tag">Full Career</div>
       <div class="card-divider"></div>
       <div class="card-title" data-i-html="card2_title">Career<br><em>Portfolio</em></div>
       <div class="card-desc" data-i="card2_desc">15 years of experience, publications, research, and professional development.</div>
-      <div class="card-link" data-i="card2_link">View Portfolio →</div>
+      <div class="card-actions">
+        <div class="card-link" data-i="card2_link">View Portfolio →</div>
+        <button class="card-pdf" onclick="event.preventDefault();window.open('portfolio.html');setTimeout(()=>{},100)" data-i="card2_pdf">⬇ Download PDF</button>
+      </div>
     </a>
   </div>
 </section>
@@ -112,10 +121,12 @@
       card1_title: 'Learning Support &amp;<br><em>Inclusive Education</em>',
       card1_desc: 'My philosophy, practice, and approach to learning support in international secondary settings.',
       card1_link: 'View Learning Support Page →',
+      card1_pdf: '⬇ Download PDF',
       card2_tag: 'Full Career',
       card2_title: 'Career<br><em>Portfolio</em>',
       card2_desc: '15 years of experience, publications, research, and professional development.',
       card2_link: 'View Portfolio →',
+      card2_pdf: '⬇ Download PDF',
       footer_loc: 'Ho Chi Minh City, Vietnam',
     },
     ko: {
@@ -126,10 +137,12 @@
       card1_title: '학습지원 &amp;<br><em>통합교육</em>',
       card1_desc: '국제 중등학교 환경에서의 학습지원 철학, 실천, 접근 방식.',
       card1_link: '학습지원 페이지 보기 →',
+      card1_pdf: '⬇ PDF 다운로드',
       card2_tag: '전체 경력',
       card2_title: '경력<br><em>포트폴리오</em>',
       card2_desc: '15년간의 교직 경력, 출판물, 연구, 전문성 개발.',
       card2_link: '포트폴리오 보기 →',
+      card2_pdf: '⬇ PDF 다운로드',
       footer_loc: '베트남 호치민시',
     }
   };
@@ -149,6 +162,10 @@
     });
     document.getElementById('langFlag').textContent = lang === 'en' ? '🇰🇷' : '🇬🇧';
     document.getElementById('langLabel').textContent = lang === 'en' ? 'KO' : 'EN';
+    document.querySelectorAll('[data-i]').forEach(el => {
+      const k = el.getAttribute('data-i');
+      if (t[k] !== undefined) el.textContent = t[k];
+    });
   }
 
   function toggleLang() {
