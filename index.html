@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Andrew Lee | Learning Support & Inclusive Education</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0f1e35; --cream: #f5f0e8; --cream-light: #faf7f2;
+    --gold: #c49a3c; --gold-light: #d4af6a; --text: #2a2a2a; --muted: #6b7280;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--cream); min-height: 100vh; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 0.05em; }
+  .nav-logo span { color: var(--gold); }
+  .lang-switcher { display: flex; align-items: center; gap: 0.4rem; cursor: pointer; padding: 0.4rem 0.8rem; border: 1px solid rgba(196,154,60,0.4); transition: all 0.3s; }
+  .lang-switcher:hover { border-color: var(--gold); }
+  .lang-flag { font-size: 1rem; }
+  .lang-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 8rem 4rem 4rem; text-align: center; position: relative; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(196,154,60,0.08) 0%, transparent 65%); pointer-events: none; }
+
+  .hero-tag { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s 0.2s forwards; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.1; color: var(--cream); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s 0.4s forwards; }
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
+  .hero-sub { font-size: 1.05rem; line-height: 1.85; color: rgba(245,240,232,0.6); max-width: 560px; margin: 0 auto 4rem; opacity: 0; animation: fadeUp 0.8s 0.6s forwards; }
+
+  /* CARDS */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 860px; width: 100%; opacity: 0; animation: fadeUp 0.8s 0.8s forwards; }
+  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(196,154,60,0.2); padding: 3rem; text-decoration: none; color: inherit; transition: all 0.35s; position: relative; overflow: hidden; text-align: left; }
+  .card::before { content: ''; position: absolute; inset: 0; background: rgba(196,154,60,0.04); opacity: 0; transition: opacity 0.35s; }
+  .card:hover { border-color: rgba(196,154,60,0.6); transform: translateY(-4px); }
+  .card:hover::before { opacity: 1; }
+  .card-tag { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; line-height: 1.2; color: var(--cream); margin-bottom: 1rem; }
+  .card-title em { font-style: italic; color: var(--gold-light); }
+  .card-desc { font-size: 0.88rem; line-height: 1.8; color: rgba(245,240,232,0.55); margin-bottom: 1.8rem; }
+  .card-link { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.5rem; transition: gap 0.3s; }
+  .card:hover .card-link { gap: 0.9rem; }
+  .card-divider { width: 2rem; height: 1px; background: rgba(196,154,60,0.4); margin-bottom: 1.5rem; }
+
+  /* FOOTER */
+  .footer-bar { position: fixed; bottom: 0; left: 0; right: 0; padding: 1.2rem 4rem; display: flex; justify-content: space-between; align-items: center; background: rgba(15,30,53,0.8); backdrop-filter: blur(10px); }
+  .footer-bar p { font-size: 0.75rem; color: rgba(245,240,232,0.25); }
+  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--gold); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 700px) {
+    nav { padding: 1rem 2rem; }
+    .hero { padding: 7rem 2rem 6rem; }
+    .cards { grid-template-columns: 1fr; }
+    .footer-bar { padding: 1rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Andrew <span>Lee</span></div>
+  <div class="lang-switcher" onclick="toggleLang()">
+    <span class="lang-flag" id="langFlag">🇰🇷</span>
+    <span class="lang-label" id="langLabel">KO</span>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag" data-i="hero_tag">Learning Support · Inclusive Education · Special Education · EdTech</div>
+  <h1 data-i-html="hero_h1">Andrew <em>Lee</em></h1>
+  <p class="hero-sub" data-i="hero_sub">Learning Support and Inclusive Education specialist with 15 years of experience across national and international school settings — currently at Korean International School Ho Chi Minh City, Vietnam.</p>
+
+  <div class="cards">
+    <a class="card" href="ls.html">
+      <div class="card-tag" data-i="card1_tag">Learning Support</div>
+      <div class="card-divider"></div>
+      <div class="card-title" data-i-html="card1_title">LS &amp;<br><em>Inclusive Ed</em></div>
+      <div class="card-desc" data-i="card1_desc">My philosophy, practice, and approach to learning support in IB secondary settings — designed for school hiring teams.</div>
+      <div class="card-link" data-i="card1_link">View LS Page →</div>
+    </a>
+    <a class="card" href="portfolio.html">
+      <div class="card-tag" data-i="card2_tag">Full Career</div>
+      <div class="card-divider"></div>
+      <div class="card-title" data-i-html="card2_title">Career<br><em>Portfolio</em></div>
+      <div class="card-desc" data-i="card2_desc">15 years of experience, publications, research, and professional development — a complete career timeline.</div>
+      <div class="card-link" data-i="card2_link">View Portfolio →</div>
+    </a>
+  </div>
+</section>
+
+<div class="footer-bar">
+  <p>© 2026 Andrew (Hooseok) Lee</p>
+  <div class="footer-name">Andrew Lee</div>
+  <p data-i="footer_loc">Ho Chi Minh City, Vietnam</p>
+</div>
+
+<script>
+  const i18n = {
+    en: {
+      hero_tag: 'Learning Support · Inclusive Education · Special Education · EdTech',
+      hero_h1: 'Andrew <em>Lee</em>',
+      hero_sub: 'Learning Support and Inclusive Education specialist with 15 years of experience across national and international school settings — currently at Korean International School Ho Chi Minh City, Vietnam.',
+      card1_tag: 'Learning Support',
+      card1_title: 'LS &amp;<br><em>Inclusive Ed</em>',
+      card1_desc: 'My philosophy, practice, and approach to learning support in IB secondary settings — designed for school hiring teams.',
+      card1_link: 'View LS Page →',
+      card2_tag: 'Full Career',
+      card2_title: 'Career<br><em>Portfolio</em>',
+      card2_desc: '15 years of experience, publications, research, and professional development — a complete career timeline.',
+      card2_link: 'View Portfolio →',
+      footer_loc: 'Ho Chi Minh City, Vietnam',
+    },
+    ko: {
+      hero_tag: '학습지원 · 통합교육 · 특수교육 · 에듀테크',
+      hero_h1: '이후석 <em>(Andrew Lee)</em>',
+      hero_sub: '국내외 교육 현장에서 15년 이상 학습지원 및 통합교육 전문가로 활동해 왔습니다. 현재 베트남 호치민 한국국제학교에 재직 중입니다.',
+      card1_tag: '학습지원',
+      card1_title: '학습지원 &amp;<br><em>통합교육</em>',
+      card1_desc: 'IB 중등 환경에서의 학습지원 철학, 실천, 접근 방식 — 채용 담당자를 위한 페이지입니다.',
+      card1_link: 'LS 페이지 보기 →',
+      card2_tag: '전체 경력',
+      card2_title: '경력<br><em>포트폴리오</em>',
+      card2_desc: '15년간의 교직 경력, 출판물, 연구, 전문성 개발 — 완전한 경력 타임라인입니다.',
+      card2_link: '포트폴리오 보기 →',
+      footer_loc: '베트남 호치민시',
+    }
+  };
+
+  let currentLang = 'en';
+
+  function applyLang(lang) {
+    const t = i18n[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i]').forEach(el => {
+      const k = el.getAttribute('data-i');
+      if (t[k] !== undefined) el.textContent = t[k];
+    });
+    document.querySelectorAll('[data-i-html]').forEach(el => {
+      const k = el.getAttribute('data-i-html');
+      if (t[k] !== undefined) el.innerHTML = t[k];
+    });
+    document.getElementById('langFlag').textContent = lang === 'en' ? '🇰🇷' : '🇬🇧';
+    document.getElementById('langLabel').textContent = lang === 'en' ? 'KO' : 'EN';
+  }
+
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'ko' : 'en';
+    applyLang(currentLang);
+  }
+</script>
+</body>
+</html>
