@@ -1,123 +1,101 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Andrew Lee | Learning Support &amp; Inclusive Education Specialist</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<title>Andrew Lee | Learning Support — ISHCMC Secondary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --navy: #0f1e35;
-    --navy-mid: #1a2f4a;
-    --cream: #f5f0e8;
-    --cream-light: #faf7f2;
-    --gold: #c49a3c;
-    --gold-light: #d4af6a;
-    --text: #2a2a2a;
-    --text-muted: #6b7280;
-    --white: #ffffff;
+    --navy: #0f1e35; --cream: #f5f0e8; --cream-light: #faf7f2;
+    --gold: #c49a3c; --gold-light: #d4af6a; --text: #2a2a2a; --muted: #6b7280; --white: #ffffff;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream-light); color: var(--text); overflow-x: hidden; }
-
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; background: rgba(15, 30, 53, 0.97); backdrop-filter: blur(10px); }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--cream); letter-spacing: 0.05em; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream-light); color: var(--text); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; background: rgba(15,30,53,0.97); backdrop-filter: blur(10px); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 0.05em; }
   .nav-logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { color: rgba(245,240,232,0.7); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
   .nav-links a:hover { color: var(--gold); }
   .lang-switcher { display: flex; align-items: center; gap: 0.4rem; cursor: pointer; padding: 0.4rem 0.8rem; border: 1px solid rgba(196,154,60,0.4); transition: all 0.3s; margin-left: 2rem; }
   .lang-switcher:hover { border-color: var(--gold); }
   .lang-flag { font-size: 1rem; }
   .lang-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
-
-  .hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; position: relative; overflow: hidden; padding: 8rem 4rem 4rem; }
-  .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(135deg, transparent 40%, rgba(196,154,60,0.06) 100%); }
+  .hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; padding: 8rem 4rem 5rem; position: relative; overflow: hidden; }
   .hero::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 80px; background: var(--cream-light); clip-path: ellipse(55% 100% at 50% 100%); }
-  .hero-grid { display: grid; grid-template-columns: 1fr 1fr 220px; gap: 2.5rem; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%; }
-  .hero-tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; border-bottom: 1px solid rgba(196,154,60,0.3); padding-bottom: 0.5rem; }
-  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.8rem); font-weight: 300; line-height: 1.2; color: var(--cream); margin-bottom: 1.5rem; word-break: keep-all; overflow-wrap: normal; }
+  .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: linear-gradient(135deg, transparent 40%, rgba(196,154,60,0.05) 100%); }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: center; }
+  .hero-badge { display: inline-block; font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(196,154,60,0.4); padding: 0.35rem 1rem; margin-bottom: 2rem; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 4vw, 3.6rem); font-weight: 300; line-height: 1.15; color: var(--cream); margin-bottom: 1.8rem; word-break: keep-all; }
   .hero h1 em { font-style: italic; color: var(--gold-light); }
-  .hero-sub { font-size: 1rem; line-height: 1.8; color: rgba(245,240,232,0.65); max-width: 480px; margin-bottom: 2.5rem; }
-  .hero-cta { display: inline-flex; gap: 1rem; }
-  .btn-primary { padding: 0.85rem 2rem; background: var(--gold); color: var(--navy); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s; }
-  .btn-primary:hover { background: var(--gold-light); }
-  .btn-outline { padding: 0.85rem 2rem; border: 1px solid rgba(245,240,232,0.3); color: var(--cream); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s; }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-  .hero-stats { display: flex; flex-direction: column; gap: 2rem; align-items: flex-end; }
-  .stat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(196,154,60,0.2); padding: 1.8rem 2.2rem; text-align: right; min-width: 200px; animation: fadeInRight 0.8s ease forwards; opacity: 0; }
-  .stat-card:nth-child(1) { animation-delay: 0.2s; }
-  .stat-card:nth-child(2) { animation-delay: 0.4s; }
-  .stat-card:nth-child(3) { animation-delay: 0.6s; }
-  @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
-  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1; }
-  .stat-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.5); margin-top: 0.3rem; }
-
+  .hero-sub { font-size: 1rem; line-height: 1.85; color: rgba(245,240,232,0.65); margin-bottom: 2.5rem; max-width: 480px; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-gold { padding: 0.85rem 2rem; background: var(--gold); color: var(--navy); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s; }
+  .btn-gold:hover { background: var(--gold-light); }
+  .btn-ghost { padding: 0.85rem 2rem; border: 1px solid rgba(245,240,232,0.3); color: var(--cream); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s; }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(196,154,60,0.2); padding: 2.5rem; }
+  .hero-card-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .hero-card-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.7; color: var(--cream); font-style: italic; }
   section { padding: 6rem 4rem; }
-  .section-inner { max-width: 1200px; margin: 0 auto; }
-  .section-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
-  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 3rem; }
-
-  .about { background: var(--cream-light); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
-  .philosophy-card { background: var(--navy); padding: 3rem; position: relative; }
-  .philosophy-card::before { content: '\201C'; font-family: 'Cormorant Garamond', serif; font-size: 8rem; color: var(--gold); opacity: 0.2; position: absolute; top: -1rem; left: 1.5rem; line-height: 1; }
-  .philosophy-text { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 1.7; color: var(--cream); font-style: italic; position: relative; z-index: 1; }
-  .about-body p { font-size: 1rem; line-height: 1.9; color: #444; margin-bottom: 1.2rem; }
-  .tag-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
-  .tag { padding: 0.4rem 1rem; border: 1px solid rgba(196,154,60,0.4); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); }
-
-  .experience { background: var(--navy); }
-  .experience .section-title { color: var(--cream); }
-  .exp-light, .exp-dark { margin: 2rem 0 0; }
-
-  .timeline { position: relative; }
-  .timeline::before { content: ''; position: absolute; left: 180px; top: 0; bottom: 0; width: 1px; background: rgba(196,154,60,0.2); }
-  .timeline-item { display: grid; grid-template-columns: 180px 1fr; gap: 3rem; margin-bottom: 3rem; position: relative; }
-  .timeline-item::before { content: ''; position: absolute; left: 176px; top: 0.4rem; width: 9px; height: 9px; background: var(--gold); border-radius: 50%; }
-  .timeline-date { font-size: 0.78rem; color: var(--gold); letter-spacing: 0.05em; text-align: right; padding-top: 0.2rem; padding-right: 2rem; }
-  .timeline-org { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.4); margin-bottom: 0.3rem; }
-  .timeline-role { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--cream); margin-bottom: 0.8rem; }
-  .timeline-desc { font-size: 0.88rem; line-height: 1.8; color: rgba(245,240,232,0.55); }
-  .timeline-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
-  .timeline-tag { padding: 0.25rem 0.7rem; background: rgba(196,154,60,0.1); border: 1px solid rgba(196,154,60,0.2); font-size: 0.7rem; color: var(--gold-light); letter-spacing: 0.05em; }
-
-  .research { background: var(--cream-light); }
-  .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .research-card { background: var(--white); border-top: 3px solid var(--gold); padding: 2rem; transition: transform 0.3s, box-shadow 0.3s; }
-  .research-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(15,30,53,0.1); }
-  .research-type { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
-  .research-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); line-height: 1.4; margin-bottom: 0.8rem; }
-  .research-meta { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
-  .research-status { display: inline-block; margin-top: 1rem; padding: 0.25rem 0.8rem; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; }
-  .status-active { background: rgba(196,154,60,0.12); color: var(--gold); }
-  .status-pub { background: rgba(15,30,53,0.08); color: var(--navy); }
-
-  .skills { background: var(--navy); }
-  .skills .section-title { color: var(--cream); }
-  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-  .skill-group-title { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(196,154,60,0.2); }
-  .skill-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.9rem; }
-  .skill-name { font-size: 0.88rem; color: rgba(245,240,232,0.75); flex: 1; }
-  .skill-bar { width: 60px; min-width: 60px; height: 2px; background: rgba(255,255,255,0.1); margin-left: 1rem; }
-  .skill-fill { height: 100%; background: var(--gold); }
-
-  .contact { background: var(--cream-light); text-align: center; padding: 6rem 4rem; }
-  .contact-inner { max-width: 600px; margin: 0 auto; }
-  .contact .section-title { margin-bottom: 1rem; }
-  .contact-sub { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; }
-  .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-  .contact-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border: 1px solid rgba(15,30,53,0.2); color: var(--navy); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s; }
-  .contact-link:hover { background: var(--navy); color: var(--cream); }
-
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 3rem; }
+  .approach { background: var(--cream-light); }
+  .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .approach-card { background: var(--white); border-top: 3px solid var(--gold); padding: 2rem; }
+  .approach-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: rgba(196,154,60,0.25); line-height: 1; margin-bottom: 1rem; font-weight: 300; }
+  .approach-title { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.8rem; }
+  .approach-desc { font-size: 0.9rem; line-height: 1.8; color: var(--muted); }
+  .practice { background: var(--navy); }
+  .practice .section-title { color: var(--cream); }
+  .practice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .practice-item { border: 1px solid rgba(196,154,60,0.2); padding: 1.8rem; }
+  .practice-item-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+  .practice-item-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--cream); margin-bottom: 0.8rem; font-weight: 400; }
+  .practice-item-desc { font-size: 0.85rem; line-height: 1.8; color: rgba(245,240,232,0.55); }
+  .ls-skills { background: var(--cream-light); }
+  .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+  .skill-group-title { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(196,154,60,0.25); }
+  .skill-list { list-style: none; }
+  .skill-list li { font-size: 0.9rem; color: var(--text); padding: 0.55rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); display: flex; align-items: center; gap: 0.6rem; }
+  .skill-list li::before { content: ''; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+  .ib { background: var(--navy); }
+  .ib .section-title { color: var(--cream); }
+  .ib-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .ib-card { background: rgba(255,255,255,0.04); border-left: 2px solid var(--gold); padding: 1.5rem 1.8rem; }
+  .ib-card-title { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; color: var(--gold); margin-bottom: 0.5rem; text-transform: uppercase; }
+  .ib-card-desc { font-size: 0.85rem; line-height: 1.75; color: rgba(245,240,232,0.6); }
+  .cta-section { background: var(--cream-light); text-align: center; padding: 5rem 4rem; }
+  .cta-section .section-title { margin-bottom: 1rem; }
+  .cta-sub { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .cta-links { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
+  .cta-link { padding: 0.9rem 2rem; border: 1px solid rgba(15,30,53,0.25); color: var(--navy); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s; }
+  .cta-link:hover { background: var(--navy); color: var(--cream); }
+  .cta-link.primary { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .cta-link.primary:hover { background: var(--gold-light); }
   footer { background: var(--navy); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; }
   footer p { font-size: 0.78rem; color: rgba(245,240,232,0.3); }
-  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold); letter-spacing: 0.1em; }
+  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold); }
 
-  .timeline-desc, .about-body p, .research-meta, .hero-sub, .contact-sub { text-align: left; hyphens: auto; -webkit-hyphens: auto; word-spacing: -0.01em; overflow-wrap: break-word; }
+  /* CASE EXAMPLES */
+  .cases { background: var(--cream-light); }
+  .cases .section-title { color: var(--navy); }
+  .case-list { display: flex; flex-direction: column; gap: 4rem; }
+  .case-item { max-width: 860px; }
+  .case-header { margin-bottom: 1.8rem; }
+  .case-grade { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .case-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--navy); }
+  .case-body { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem 3rem; }
+  .case-block-label { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; font-weight: 500; }
+  .case-block-text { font-size: 0.9rem; line-height: 1.8; color: var(--text); }
+  .case-outcome { grid-column: 1 / -1; background: rgba(196,154,60,0.06); border-left: 3px solid var(--gold); padding: 1.2rem 1.5rem; margin-top: 0.5rem; }
+  .case-outcome .case-block-label { color: var(--navy); }
+  .case-divider { border: none; border-top: 1px solid rgba(196,154,60,0.2); margin-top: 4rem; }
+  @media (max-width: 900px) { .case-body { grid-template-columns: 1fr; } .case-outcome { grid-column: 1; } }
+
 
   .pdf-btn-wrap {
     position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -193,388 +171,299 @@
 
   .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.7s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
-
   @media (max-width: 900px) {
     nav { padding: 1rem 2rem; }
     .nav-links { display: none; }
     section { padding: 4rem 2rem; }
-    .hero { padding: 7rem 2rem 4rem; }
-    .hero-grid { grid-template-columns: 1fr; }
-    .hero-image { display: block; width: 100%; margin: 1.5rem 0; }
-    .hero h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
-    .hero-stats { flex-direction: row; align-items: flex-start; flex-wrap: wrap; }
-    .about-grid { grid-template-columns: 1fr; }
-    .timeline::before { left: 0; }
-    .timeline-item { grid-template-columns: 1fr; }
-    .timeline-item::before { left: -4px; }
-    .timeline-date { text-align: left; padding-right: 0; }
-    .research-grid { grid-template-columns: 1fr; }
-    .skills-grid { grid-template-columns: 1fr; }
+    .hero { padding: 7rem 2rem 5rem; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .approach-grid, .practice-grid, .skills-grid, .ib-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
-    .exp-light { margin-left: -2rem; margin-right: -2rem; padding-left: 2rem; padding-right: 2rem; }
   }
 </style>
 </head>
-<body><!-- NAV -->
+<body>
+
 <div class="pdf-btn-wrap">
-  <button class="pdf-btn" onclick="window.location.href='PF.pdf'" data-i="pdf_btn">⬇ Download PDF</button>
+  <button class="pdf-btn" onclick="window.location.href='LS.pdf'" data-i="pdf_btn">⬇ Download PDF</button>
 </div>
 <nav>
-<a href="index.html" style="text-decoration:none;"><div class="nav-logo">Andrew <span>Lee</span></div></a>
-<ul class="nav-links">
-<li><a data-i18n="nav_about" href="#about">About</a></li>
-<li><a data-i18n="nav_exp" href="#experience">Experience</a></li>
-<li><a data-i18n="nav_research" href="#research">Research</a></li>
-<li><a data-i18n="nav_skills" href="#skills">Skills</a></li>
-<li><a data-i18n="nav_contact" href="#contact">Contact</a></li>
-<li><a href="ls.html" style="color:var(--gold);" data-i18n="nav_ls">Learning Support →</a></li>
-</ul>
-<div class="lang-switcher" id="langToggle" onclick="toggleLang()">
-<span class="lang-flag" id="langFlag">🇰🇷</span>
-<span class="lang-label" id="langLabel">KO</span>
-</div>
+  <a href="index.html" style="text-decoration:none;"><div class="nav-logo">Andrew <span>Lee</span></div></a>
+  <ul class="nav-links">
+    <li><a href="#approach" data-i="nav_approach">Approach</a></li>
+    <li><a href="#practice" data-i="nav_practice">Practice</a></li>
+    <li><a href="#skills" data-i="nav_skills">Skills</a></li>
+    <li><a href="#ib" data-i="nav_ib">Inclusive Practice</a></li>
+    <li><a href="portfolio.html" data-i="nav_full">Full Experience →</a></li>
+  </ul>
+  <div class="lang-switcher" onclick="toggleLang()">
+    <span class="lang-flag" id="langFlag">🇰🇷</span>
+    <span class="lang-label" id="langLabel">KO</span>
+  </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-<div class="hero-grid">
-<div>
-<div class="hero-tag">Learning Support · Inclusive Education · SEN · EdTech</div>
-<h1>Building <em>inclusive</em> communities<br>where every learner belongs</h1>
-<p class="hero-sub">Learning Support and Inclusive Education specialist with 15 years of classroom experience, published research, and EdTech expertise — currently supporting diverse learners at Korean International School Ho Chi Minh City, Vietnam.</p>
-<div class="hero-cta">
-<a class="btn-primary" href="#experience">View Experience</a>
-<a class="btn-outline" href="#contact">Get in Touch</a>
-</div>
-</div>
-<div class="hero-image">
-<img src="teacher.png" alt="Andrew Lee teaching" style="width:100%;max-width:480px;height:auto;object-fit:contain;display:block;"/>
-</div>
-<div class="hero-stats">
-<div class="stat-card"><div class="stat-num">15</div><div class="stat-label">Years Teaching</div></div>
-<div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Publications</div></div>
-<div class="stat-card"><div class="stat-num">2</div><div class="stat-label">Countries</div></div>
-</div>
-</div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge" data-i="hero_badge">Learning Support · Inclusive Education · International School</div>
+      <h1 data-i-html="hero_h1">Where every learner finds their way in —<br>and every teacher feels <em>equipped to help.</em></h1>
+      <p class="hero-sub" data-i="hero_sub">I am Andrew (Hooseok) Lee — a Learning Support specialist with 15 years of experience across national and international school settings, supporting learners from primary through to secondary transition — covering the full school range. I work alongside classroom teachers to ensure every student can access, engage with, and make progress in their learning.</p>
+      <div class="hero-cta">
+        <a href="#practice" class="btn-gold" data-i="hero_btn1">See My Practice</a>
+        <a href="portfolio.html" class="btn-ghost" data-i="hero_btn2">Full Experience</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-label" data-i="card_label">Learning Support Philosophy</div>
+      <div class="hero-card-quote" data-i-html="card_quote">Where learning environments designed for all meet attentive, personalised support for each — inclusive education blossoms into culture.<br><br>That intersection — inside the classroom and beyond — is what I hope to build, together.</div>
+    </div>
+  </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-<div class="section-inner">
-<div class="section-label">About</div>
-<h2 class="section-title">Philosophy &amp; Background</h2>
-<div class="about-grid">
-<div class="philosophy-card fade-in">
-<p class="philosophy-text">Where learning environments designed for all meet attentive, personalised support for each — inclusive education blossoms into culture.<br>That intersection — inside the classroom and beyond — is what I hope to build, together.</p>
-</div>
-<div class="about-body fade-in">
-<p>I am Andrew (Hooseok) Lee, a Learning Support and Inclusive Education specialist with over 15 years of experience across both national and international school settings. My practice is grounded in evidence-based SEN provision, differentiated instruction, and a deep commitment to making learning genuinely accessible for every student.</p>
-<p>At Korean International School Ho Chi Minh City, I design and lead the school's learning support program — working closely with classroom teachers, subject specialists, school counsellors, nurses, career advisors, administrators, and support staff to embed inclusive practice into the everyday fabric of school life. This cross-functional collaboration has been central to my work throughout my career, extending beyond the school gate to encompass universities, government agencies, local authorities, and businesses.</p>
-<p>Alongside my practice, I lead domestic and international research on attitudes toward inclusive education — grounding everything I do in evidence and connecting classroom reality with the broader field.</p>
-<div class="tag-list">
-<span class="tag">Learning Support</span>
-<span class="tag">SEN / Inclusive Ed</span>
-<span class="tag">IEP Development</span>
-<span class="tag">Assessment Accommodations</span>
-<span class="tag">Differentiated Instruction</span>
-<span class="tag">EdTech Integration</span>
-<span class="tag">Research-Informed Practice</span>
-<span class="tag">Curriculum Development</span>
-</div>
-</div>
-</div>
-</div>
+<section class="approach" id="approach">
+  <div class="section-inner">
+    <div class="section-label" data-i="approach_label">My Approach</div>
+    <h2 class="section-title" data-i="approach_title">How I Support Learners</h2>
+    <div class="approach-grid">
+      <div class="approach-card fade-in">
+        <div class="approach-num">01</div>
+        <div class="approach-title" data-i="a1_title">Design for Access</div>
+        <div class="approach-desc" data-i="a1_desc">I apply Universal Design for Learning (UDL) principles to ensure that instructional materials, tasks, and assessments are accessible to all learners before barriers arise — not as an afterthought.</div>
+      </div>
+      <div class="approach-card fade-in">
+        <div class="approach-num">02</div>
+        <div class="approach-title" data-i="a2_title">Collaborate to Include</div>
+        <div class="approach-desc" data-i="a2_desc">Effective inclusion happens through teacher partnership. I work alongside subject teachers to co-plan lessons, adapt curriculum, modify assessments, and deliver in-class support through co-teaching.</div>
+      </div>
+      <div class="approach-card fade-in">
+        <div class="approach-num">03</div>
+        <div class="approach-title" data-i="a3_title">Personalise with Purpose</div>
+        <div class="approach-desc" data-i="a3_desc">I develop and implement Individual Learning Plans (ILPs) aligned with classroom objectives, monitor student progress through formative assessment, and adjust strategies to meet each learner's evolving needs.</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="experience" id="experience">
-<div class="section-inner">
-<div class="section-label" style="color:var(--gold)">Experience</div>
-<h2 class="section-title">Career Timeline</h2>
 
-<div class="exp-dark">
-<div class="section-label" data-sec="sec1" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--cream);letter-spacing:0.02em;text-transform:none;margin:3rem 0 1.5rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(196,154,60,0.35);display:block;">① Teaching Career</div>
-<div class="timeline">
-<div class="timeline-item fade-in">
-<div class="timeline-date">2024.03 — Present</div>
-<div class="timeline-content">
-<div class="timeline-org" data-org="t1_org">Korean International School Ho Chi Minh City · Vietnam</div>
-<div class="timeline-role" data-role="t1_role">Special Education &amp; Learning Support / Inclusive Education</div>
-<div class="timeline-desc" data-desc="t1_desc">Run the special education curriculum and inclusive education programme across primary and secondary levels, providing comprehensive learning support throughout. Work alongside classroom teachers, subject teachers, school counsellors, nurses, career advisors, administrators, and support staff to embed inclusive education into the daily life of the school. Design and implement individual learning plans, manage assessment accommodations, and develop and operate the career and vocational education programme. Brokered an institutional MOU between the National Centre for Special Education, Vietnam (NCSE) and KIS HCMC (2024).</div>
-<div class="timeline-tags">
-<span class="timeline-tag">Special Education</span>
-<span class="timeline-tag">Inclusive Education</span>
-<span class="timeline-tag">Assessment</span>
-<span class="timeline-tag">Career &amp; Vocational Ed</span>
-<span class="timeline-tag">International</span>
-</div>
-</div>
-</div>
-<div class="timeline-item fade-in">
-<div class="timeline-date">2014.03 — 2024.02</div>
-<div class="timeline-content">
-<div class="timeline-org" data-org="t2_org">Yonsei University Rehabilitation School · Seoul, Korea</div>
-<div class="timeline-role" data-role="t2_role">Special Education Teacher</div>
-<div class="timeline-desc" data-desc="t2_desc">Taught special education across primary, secondary, and post-secondary levels including the post-school transition programme over a decade, supporting students with a wide range of disabilities and varying levels of need. Planned and led school-based professional learning communities in software education, AI-integrated instruction, and assistive technology, driving school-wide pedagogical innovation. Committed to inclusion that extends beyond the school gates, partnered with education authorities, universities, businesses, government agencies, and local communities to broker institutional agreements and support graduates' transitions into employment and society.</div>
-<div class="timeline-tags">
-<span class="timeline-tag">Special Education</span>
-<span class="timeline-tag">AI Education</span>
-<span class="timeline-tag">Software Ed</span>
-<span class="timeline-tag">Assistive Technology</span>
-<span class="timeline-tag">Curriculum Dev</span>
-</div>
-</div>
-</div>
-<div class="timeline-item fade-in">
-<div class="timeline-date">2008.05 — 2010.05</div>
-<div class="timeline-content">
-<div class="timeline-org" data-org="t3_org">Special Education School · Korea</div>
-<div class="timeline-role" data-role="t3_role">Learning Support Assistant — Social Service</div>
-<div class="timeline-desc" data-desc="t3_desc">Completed 24 months of mandatory alternative military service in South Korea as a learning support assistant in a special education school. Provided direct in-class support to students with disabilities, gaining foundational experience in SEN environments that shaped a long-term commitment to inclusive education.</div>
-<div class="timeline-tags">
-<span class="timeline-tag">Learning Support</span>
-<span class="timeline-tag">Special Education</span>
-<span class="timeline-tag">Direct Student Support</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!-- CASE EXAMPLES -->
+<section class="cases" id="cases">
+  <div class="section-inner">
+    <div class="section-label" data-i="cases_label">Case Examples</div>
+    <h2 class="section-title" data-i="cases_title">Learning Support Across Grade Levels</h2>
+    <div class="case-list">
 
-<div class="exp-light">
-<div class="section-label" data-sec="sec2" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--cream);letter-spacing:0.02em;text-transform:none;margin:3rem 0 1.5rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(196,154,60,0.35);display:block;">② Lead Teacher</div>
-<div class="timeline">
-<div class="timeline-item fade-in">
-<div class="timeline-date">2020.03 — 2024.02</div>
-<div class="timeline-content">
-<div class="timeline-org" data-org="e1_org">Seoul Metropolitan Office of Education &amp; Seoul West District Office of Education · Korea</div>
-<div class="timeline-role" data-role="e1_role">EdTech Lead Teacher</div>
-<div class="timeline-desc" data-desc="e1_desc">Designated as EdTech lead teacher by Seoul Metropolitan Office of Education and Seoul West District Office of Education over four consecutive years. As one of few special educators among predominantly general education teacher cohorts, collaborated closely with colleagues across subjects and roles to integrate digital tools and AI-based resources into diverse classroom settings, and contributed to city-wide AI education initiatives.</div>
-<div class="timeline-tags">
-<span class="timeline-tag">EdTech Leadership</span>
-<span class="timeline-tag">AI Classroom</span>
-<span class="timeline-tag">Teacher Support</span>
-<span class="timeline-tag">Digital Integration</span>
-</div>
-</div>
-</div>
-<div class="timeline-item fade-in">
-<div class="timeline-date">2020.03 — 2021.03</div>
-<div class="timeline-content">
-<div class="timeline-org" data-org="e2_org">Seoul Metropolitan Office of Education · Korea</div>
-<div class="timeline-role" data-role="e2_role">Software Education Lead School Coordinator</div>
-<div class="timeline-desc" data-desc="e2_desc">Coordinated school-wide software education initiatives as part of Seoul Metropolitan Office of Education's flagship software education programme. Designed and led a professional learning community focused on software-integrated instruction, supporting colleagues in embedding computational thinking and coding into special education curricula.</div>
-<div class="timeline-tags">
-<span class="timeline-tag">Software Education</span>
-<span class="timeline-tag">School Coordination</span>
-</div>
-</div>
-</div>
-<div class="timeline-item fade-in">
-<div class="timeline-date">2022.03 — 2024.02</div>
-<div class="timeline-content">
-<div class="timeline-org" data-org="e3_org">Seoul West District Office of Education · Korea</div>
-<div class="timeline-role" data-role="e3_role">Teaching &amp; Assessment Sharing Support Network</div>
-<div class="timeline-desc" data-desc="e3_desc">Served as a member of the Teaching and Assessment Sharing Support Network under Seoul West District Office of Education — often the sole special educator in a network of general teachers. Contributed to peer observation culture and collaborative professional reflection, sharing practical case studies on inclusive assessment design and instructional adaptation from a special education perspective.</div>
-<div class="timeline-tags">
-<span class="timeline-tag">Peer Learning</span>
-<span class="timeline-tag">Assessment Design</span>
-<span class="timeline-tag">Instructional Innovation</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+      <div class="case-item fade-in">
+        <div class="case-header">
+          <div class="case-grade" data-i="c1_grade">Elementary · Grade 3</div>
+          <div class="case-title" data-i="c1_title">Improving Task Engagement and Independent Completion</div>
+        </div>
+        <div class="case-body">
+          <div>
+            <div class="case-block-label" data-i="case_barrier">Barrier Identified</div>
+            <div class="case-block-text" data-i="c1_barrier">Executive function challenges affecting task organisation and sustained attention, resulting in low task completion and disengagement.</div>
+          </div>
+          <div>
+            <div class="case-block-label" data-i="case_strategy">Support Strategy</div>
+            <div class="case-block-text" data-i="c1_strategy">Implemented structured scaffolding during whole-class instruction in collaboration with the classroom teacher, including step-by-step task breakdown with self-monitoring checklists, visual task sequencing, and scheduled check-in points to support task initiation and completion.</div>
+          </div>
+          <div class="case-outcome">
+            <div class="case-block-label" data-i="case_outcome">Outcome</div>
+            <div class="case-block-text" data-i="c1_outcome">Over an 8-week intervention period, task completion increased from approximately 50% to 80%. The student demonstrated improved engagement and independence, with reduced reliance on adult prompting. These improvements were sustained with reduced support and generalised across classroom contexts. The student shared that having a checklist made it easier to know what to do next.</div>
+          </div>
+        </div>
+      </div>
 
-<div class="exp-dark">
-<div class="section-label" data-sec="sec3" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--cream);letter-spacing:0.02em;text-transform:none;margin:3rem 0 1.5rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(196,154,60,0.35);display:block;">③ Expert Panel &amp; Consultancy</div>
-<div class="timeline">
-<div class="timeline-item fade-in">
-<div class="timeline-date">2019 — 2023</div>
-<div class="timeline-content">
-<div class="timeline-org" data-org="x1_org">National Institute of Special Education · Korea</div>
-<div class="timeline-role" data-role="x1_role">Expert Advisor &amp; Field Reviewer</div>
-<div class="timeline-desc" data-desc="x1_desc">Served across multiple advisory and review roles at the National Institute of Special Education. As a field applicability reviewer for digital textbooks, provided classroom-based perspectives on usability and improvement needs for students with disabilities. Served as an advisory committee member for the National Disability e-Festival. As an expert advisor on the science immersive content development project, provided advisory input on content planning and the design of interaction and motion elements suited to the needs and educational contexts of students with disabilities. Also contributed to the Assistive Technology Device Guidebook, introducing remote-control assistive technology devices in teacher-friendly language; the content was subsequently adopted as an official teacher training topic. In 2023, joined the EduAble Field Support Team — collaborating with general education teachers to develop teaching and learning materials for inclusive classrooms.</div>
-<div class="timeline-tags">
-<span class="timeline-tag">Expert Panel</span>
-<span class="timeline-tag">Digital Textbooks</span>
-<span class="timeline-tag">Immersive Learning</span>
-<span class="timeline-tag">Assistive Technology</span>
-</div>
-</div>
-</div>
-<div class="timeline-item fade-in">
-<div class="timeline-date">2020 — 2022</div>
-<div class="timeline-content">
-<div class="timeline-org" data-org="x2_org">KERIS (Korea Education and Research Information Service) · Korea</div>
-<div class="timeline-role" data-role="x2_role">Expert Advisor &amp; Teacher Support Panel</div>
-<div class="timeline-desc" data-desc="x2_desc">Contributed across two consecutive programme cycles as an expert advisor for KERIS's EdTech startup–classroom matching programme, bridging the gap between EdTech solutions and the needs of real classroom settings. Provided a practitioner's perspective on selecting genuinely useful tools and reflecting user needs in UI and UX design decisions. Served as a teacher support panel member for the national online content-integrated textbook pilot. Developed and submitted special education and inclusive education teaching and learning materials to the EduNet ITDA platform, making resources accessible to teachers nationwide.</div>
-<div class="timeline-tags">
-<span class="timeline-tag">EdTech Advisory</span>
-<span class="timeline-tag">Industry-Education Bridge</span>
-<span class="timeline-tag">Digital Textbooks</span>
-<span class="timeline-tag">Teacher Support</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+      <hr class="case-divider"/>
 
-<div class="exp-light">
-<div class="section-label" data-sec="sec4" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--cream);letter-spacing:0.02em;text-transform:none;margin:3rem 0 1.5rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(196,154,60,0.35);display:block;">④ Curriculum &amp; Materials Development</div>
-<div class="timeline">
-<div class="timeline-item fade-in">
-<div class="timeline-date">2023 — 2024</div>
-<div class="timeline-content">
-<div class="timeline-org" data-org="c1_org">Ministry of Education, Republic of Korea</div>
-<div class="timeline-role" data-role="c1_role">Textbook Author — English (Middle School)</div>
-<div class="timeline-desc" data-desc="c1_desc">Served as curriculum author for the official English textbook under the 2022 Revised Special Education National Curriculum, covering the middle school level. Authored accessible and practically oriented instructional content designed to strengthen real-life English communication skills for students with disabilities, reflecting current inclusive curriculum design principles.</div>
-<div class="timeline-tags">
-<span class="timeline-tag">Curriculum Authorship</span>
-<span class="timeline-tag">Ministry of Education</span>
-<span class="timeline-tag">National Curriculum</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+      <div class="case-item fade-in">
+        <div class="case-header">
+          <div class="case-grade" data-i="c2_grade">Middle School · Grade 7</div>
+          <div class="case-title" data-i="c2_title">Improving Reading Comprehension and Academic Engagement</div>
+        </div>
+        <div class="case-body">
+          <div>
+            <div class="case-block-label" data-i="case_barrier">Barrier Identified</div>
+            <div class="case-block-text" data-i="c2_barrier">Limited vocabulary knowledge and underdeveloped reading strategies affecting identification of key ideas and access to subject content, leading to reduced engagement and delayed task completion.</div>
+          </div>
+          <div>
+            <div class="case-block-label" data-i="case_strategy">Support Strategy</div>
+            <div class="case-block-text" data-i="c2_strategy">Provided targeted vocabulary pre-teaching and explicit instruction in reading strategies such as prediction, summarisation, and question generation. Structured graphic organisers were used to support text analysis, with support embedded within subject lessons through collaboration with classroom teachers.</div>
+          </div>
+          <div class="case-outcome">
+            <div class="case-block-label" data-i="case_outcome">Outcome</div>
+            <div class="case-block-text" data-i="c2_outcome">Over a 10-week intervention period, the student demonstrated improved ability to identify and summarise key ideas, with increased engagement in class discussions. Task completion time decreased, and the student independently applied reading strategies across subjects. These improvements were sustained with reduced support and transferred across subject areas. The student said the graphic organiser helped them see how the text was put together — ‘It was like having a map before I started reading.’</div>
+          </div>
+        </div>
+      </div>
 
-<div class="exp-dark">
-<div class="section-label" data-sec="sec5" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--cream);letter-spacing:0.02em;text-transform:none;margin:3rem 0 1.5rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(196,154,60,0.35);display:block;">⑤ Guest Lecturer &amp; Trainer</div>
-<div class="timeline">
-<div class="timeline-item fade-in">
-<div class="timeline-date">2019 — 2022</div>
-<div class="timeline-content">
-<div class="timeline-org" data-org="g1_org">Schools, District Offices of Education &amp; National Institute of Special Education · Korea</div>
-<div class="timeline-role" data-role="g1_role">Guest Lecturer &amp; Trainer</div>
-<div class="timeline-desc" data-desc="g1_desc">Served as a guest lecturer and trainer across a range of educational contexts. Delivered teacher training sessions for in-service educators at schools, district offices of education, and the National Institute of Special Education. Delivered lectures to undergraduate students in special education and social welfare programmes at university level. Also conducted disability awareness and empathy education sessions for students at general middle and high schools. Key topics included school-wide student support systems, learning support for students with disabilities, Positive Behavior Support (PBS), assistive technology, AI tools in education, and inclusive classroom practice.</div>
-<div class="timeline-tags">
-<span class="timeline-tag">Teacher Training</span>
-<span class="timeline-tag">Assistive Technology</span>
-<span class="timeline-tag">AI in Education</span>
-<span class="timeline-tag">PBS</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+      <hr class="case-divider"/>
 
-<div class="exp-light">
-<div class="section-label" data-sec="sec6" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--cream);letter-spacing:0.02em;text-transform:none;margin:3rem 0 1.5rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(196,154,60,0.35);display:block;">⑥ Professional Development</div>
-<div class="timeline">
-<div class="timeline-item fade-in">
-<div class="timeline-date">2023</div>
-<div class="timeline-content">
-<div class="timeline-org" data-org="p1_org">Google Korea · Microsoft Korea · LG Discovery Lab · Seoul West District Office of Education</div>
-<div class="timeline-role" data-role="p1_role">AI &amp; EdTech Lead Teacher Capacity Building Programme</div>
-<div class="timeline-desc" data-desc="p1_desc">Completed intensive capacity building training for EdTech lead teachers, delivered jointly by Google Korea, Microsoft Korea, and LG Discovery Lab in partnership with Seoul Metropolitan Office of Education, covering AI-based educational tools, cloud learning environments, and future-ready classroom design. Subsequently presented as a trainer at the district-level AI &amp; EdTech Future Education Sharing Forum (Seoul West District Office of Education, Oct 2023), facilitating knowledge transfer to peer teachers on AI integration in special education contexts.</div>
-<div class="timeline-tags">
-<span class="timeline-tag">Google for Education</span>
-<span class="timeline-tag">Microsoft Education</span>
-<span class="timeline-tag">AI in Education</span>
-<span class="timeline-tag">Trainer</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+      <div class="case-item fade-in">
+        <div class="case-header">
+          <div class="case-grade" data-i="c3_grade">High School · Grade 11</div>
+          <div class="case-title" data-i="c3_title">Improving Essay Writing and Independent Learning</div>
+        </div>
+        <div class="case-body">
+          <div>
+            <div class="case-block-label" data-i="case_barrier">Barrier Identified</div>
+            <div class="case-block-text" data-i="c3_barrier">Limited understanding of essay structure and underdeveloped self-regulated learning skills, including planning, time management, and revision processes, resulting in frequent submission delays.</div>
+          </div>
+          <div>
+            <div class="case-block-label" data-i="case_strategy">Support Strategy</div>
+            <div class="case-block-text" data-i="c3_strategy">Provided explicit instruction in essay structure and argument development, supported by paragraph frames and writing scaffolds. Introduced milestone-based task management including draft, feedback, and revision stages, and aligned support with assessment criteria through collaboration with subject teachers.</div>
+          </div>
+          <div class="case-outcome">
+            <div class="case-block-label" data-i="case_outcome">Outcome</div>
+            <div class="case-block-text" data-i="c3_outcome">Over a 12-week intervention period, assignment submission delays were significantly reduced, and the student demonstrated improved organisation and clarity in written work. The student showed increased independence in planning, drafting, and revising in alignment with assessment expectations. These improvements were sustained with reduced support. The student reflected that having clear milestones made the writing process feel more manageable — ‘I could see what I needed to do at each stage.’</div>
+          </div>
+        </div>
+      </div>
 
-</div>
+    </div>
+  </div>
+</section>
+<section class="practice" id="practice">
+  <div class="section-inner">
+    <div class="section-label" data-i="practice_label">In Practice</div>
+    <h2 class="section-title" data-i="practice_title">What I Actually Do</h2>
+    <div class="practice-grid">
+      <div class="practice-item fade-in">
+        <div class="practice-item-label" data-i="p1_label">Co-Teaching & In-Class Support</div>
+        <div class="practice-item-title" data-i="p1_title">Inside and Beyond the Classroom</div>
+        <div class="practice-item-desc" data-i="p1_desc">I work flexibly across push-in and pull-out models — co-teaching alongside subject teachers in the classroom, or providing targeted small-group support in a separate space, depending on what each student and situation needs.</div>
+      </div>
+      <div class="practice-item fade-in">
+        <div class="practice-item-label" data-i="p2_label">Collaborative Planning</div>
+        <div class="practice-item-title" data-i="p2_title">Designing Inclusive Units Together</div>
+        <div class="practice-item-desc" data-i="p2_desc">I work with classroom teachers during unit planning to embed differentiation and access strategies from the outset — modifying assessments, creating tiered tasks, and aligning support with broader skill development goals.</div>
+      </div>
+      <div class="practice-item fade-in">
+        <div class="practice-item-label" data-i="p3_label">ILP Development & Monitoring</div>
+        <div class="practice-item-title" data-i="p3_title">Individualised Support that Connects to Class</div>
+        <div class="practice-item-desc" data-i="p3_desc">I develop Individual Learning Plans grounded in classroom objectives, not isolated from them. Plans are communicated to all subject teachers and reviewed regularly, ensuring support is consistent, purposeful, and evidence-informed.</div>
+      </div>
+      <div class="practice-item fade-in">
+        <div class="practice-item-label" data-i="p4_label">Assessment Accommodation</div>
+        <div class="practice-item-title" data-i="p4_title">Ensuring Fair Access to Assessment</div>
+        <div class="practice-item-desc" data-i="p4_desc">I coordinate assessment accommodations across all subjects — including extended time, modified format, and assistive technology provision — ensuring students can demonstrate their understanding without being disadvantaged by their learning barriers.</div>
+      </div>
+      <div class="practice-item fade-in">
+        <div class="practice-item-label" data-i="p5_label">Family & Stakeholder Communication</div>
+        <div class="practice-item-title" data-i="p5_title">Understanding the Learner Together</div>
+        <div class="practice-item-desc" data-i="p5_desc">I maintain regular communication with families, counsellors, colleagues, and external specialists to build a complete and shared understanding of each learner — ensuring that support is coherent across school and home contexts.</div>
+      </div>
+      <div class="practice-item fade-in">
+        <div class="practice-item-label" data-i="p6_label">Teacher Capacity Building</div>
+        <div class="practice-item-title" data-i="p6_title">Growing Together with Teachers</div>
+        <div class="practice-item-desc" data-i="p6_desc">I see teacher development as core to my role. I share strategies, model inclusive practices, and build shared language around differentiation and access — so that inclusive practice becomes embedded in school culture, not dependent on a single LS or special educator.</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- RESEARCH -->
-<section class="research" id="research">
-<div class="section-inner">
-<div class="section-label">Research &amp; Publications</div>
-<h2 class="section-title">Scholarly Work</h2>
-<div class="research-grid">
-<div class="research-card fade-in">
-<div class="research-type" data-rtype="r1_type">Peer-Reviewed Research · In Progress</div>
-<div class="research-title" data-rtitle="r1_title">통합교육 태도 검사도구 개발 및 타당화 연구</div>
-<div class="research-meta" data-rmeta="r1_meta">Lead Author · International collaborative research</div>
-<span class="research-status status-active" data-rstatus="r1_status">Active Research</span>
-</div>
-<div class="research-card fade-in">
-<div class="research-type" data-rtype="r2_type">Government Publication · 2023–2024</div>
-<div class="research-title" data-rtitle="r2_title">2022 Revised Special Education Curriculum: English Textbook (Middle School)</div>
-<div class="research-meta" data-rmeta="r2_meta">Curriculum Author · Ministry of Education, Republic of Korea<br/>Official textbook for the revised national special education curriculum</div>
-<span class="research-status status-pub" data-rstatus="r2_status">Published</span>
-</div>
-<div class="research-card fade-in">
-<div class="research-type" data-rtype="r3_type">Book · 2025</div>
-<div class="research-title" data-rtitle="r3_title">KIS 교육은 무엇이 특별한가<br/><em style="font-size:0.95rem;font-weight:300;">(What Makes KIS Education Special)</em></div>
-<div class="research-meta" data-rmeta="r3_meta">Contributing Author<br/>Reflections on Korean international school education in Vietnam</div>
-<span class="research-status status-pub" data-rstatus="r3_status">Published</span>
-</div>
-<div class="research-card fade-in">
-<div class="research-type" data-rtype="r5_type">Teaching Guide · 2019</div>
-<div class="research-title" data-rtitle="r5_title">Assistive Technology Device Guidebook (Swing Remo Guide)</div>
-<div class="research-meta" data-rmeta="r5_meta">Contributing Author · National Institute of Special Education, Korea<br/>Practical guide for teachers on remote-control assistive technology devices</div>
-<span class="research-status status-pub" data-rstatus="r5_status">Published</span>
-</div>
-<div class="research-card fade-in">
-<div class="research-type" data-rtype="r4_type">Graduate Thesis · 2019</div>
-<div class="research-title" data-rtitle="r4_title">Development of a Career Education Program for Students with Disabilities Utilizing the Language Experience Approach</div>
-<div class="research-meta" data-rmeta="r4_meta">M.Ed. in Educational Technology · Instructional System Design, Yonsei University<br/>Focus: Career education · Language-based intervention design</div>
-<span class="research-status status-pub" data-rstatus="r4_status">Completed</span>
-</div>
-</div>
-</div>
+<section class="ls-skills" id="skills">
+  <div class="section-inner">
+    <div class="section-label" data-i="skills_label">Skills & Competencies</div>
+    <h2 class="section-title" data-i="skills_title">What I Bring to the Role</h2>
+    <div class="skills-grid">
+      <div class="fade-in">
+        <div class="skill-group-title" data-i="sg1">Learning Support Practice</div>
+        <ul class="skill-list">
+          <li data-i="sk1">Differentiated Instruction & Instructional Adaptation</li>
+          <li data-i="sk2">Universal Design for Learning (UDL) Implementation</li>
+          <li data-i="sk3">Individual Learning Plan (ILP) Development & Monitoring</li>
+          <li data-i="sk4">In-Class Support & Co-Teaching</li>
+          <li data-i="sk5">Assessment Accommodation & Modification</li>
+          <li data-i="sk6">Formative Assessment & Progress Monitoring</li>
+          <li data-i="sk7">Positive Behavior Support (PBS)</li>
+        </ul>
+      </div>
+      <div class="fade-in">
+        <div class="skill-group-title" data-i="sg2">Collaboration & School Community</div>
+        <ul class="skill-list">
+          <li data-i="sk8">Collaborative Planning with Subject Teachers</li>
+          <li data-i="sk9">Cross-departmental Inclusive Practice</li>
+          <li data-i="sk10">Family Communication & Partnership</li>
+          <li data-i="sk11">Liaison with External Specialists</li>
+          <li data-i="sk12">Teacher Capacity Building & Coaching</li>
+          <li data-i="sk13">School-wide Student Support System Design</li>
+        </ul>
+      </div>
+      <div class="fade-in">
+        <div class="skill-group-title" data-i="sg3">Research & Evidence-Based Practice</div>
+        <ul class="skill-list">
+          <li data-i="sk14">Learning Design & Instructional Systems Thinking</li>
+          <li data-i="sk15">Educational Research & Data-Informed Practice</li>
+          <li data-i="sk16">Curriculum Development & Programme Design</li>
+          <li data-i="sk17">ML · XAI Application in Educational Contexts</li>
+          <li data-i="sk18">EdTech Integration & Digital Tool Selection</li>
+        </ul>
+      </div>
+      <div class="fade-in">
+        <div class="skill-group-title" data-i="sg4">Credentials</div>
+        <ul class="skill-list">
+          <li data-i="sk19">15 Years Teaching — National & International Settings</li>
+          <li data-i="sk20">Special Education Teacher Certificate, GR 1 (Highest)</li>
+          <li data-i="sk21">M.Ed. Educational Technology & Instructional System Design</li>
+          <li data-i="sk22">Korean Language Teacher License, LV 2</li>
+          <li data-i="sk23">Active Researcher — Inclusive Education Attitudes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- SKILLS -->
-<section class="skills" id="skills">
-<div class="section-inner">
-<div class="section-label" style="color:var(--gold)">Skills &amp; Competencies</div>
-<h2 class="section-title">Areas of Expertise</h2>
-<div class="skills-grid">
-<div class="skill-group fade-in">
-<div class="skill-group-title" data-sg="sg1">Learning Support &amp; SEN</div>
-<div class="skill-item"><span class="skill-name" data-sk="sk1">Instructional Adaptation · Differentiated Instruction</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-<div class="skill-item"><span class="skill-name" data-sk="sk2">IEP · Lesson Design · Assessment</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-<div class="skill-item"><span class="skill-name" data-sk="sk3">University Entrance Guidance (Grade 12)</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-<div class="skill-item"><span class="skill-name" data-sk="sk4">Inclusive Education</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-<div class="skill-item"><span class="skill-name" data-sk="sk5">Career &amp; Vocational Education</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-</div>
-<div class="skill-group fade-in">
-<div class="skill-group-title" data-sg="sg2">Research &amp; Technology</div>
-<div class="skill-item"><span class="skill-name" data-sk="sk6">Statistical Analysis</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-<div class="skill-item"><span class="skill-name" data-sk="sk7">ML · XAI Application</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-<div class="skill-item"><span class="skill-name" data-sk="sk8">EdTech Integration</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-<div class="skill-item"><span class="skill-name" data-sk="sk9">Curriculum &amp; Educational Programme Development</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-<div class="skill-item"><span class="skill-name" data-sk="sk10">Digital Content Creation</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-</div>
-<div class="skill-group fade-in">
-<div class="skill-group-title" data-sg="sg3">Languages &amp; Credentials</div>
-<div class="skill-item"><span class="skill-name" data-sk="sk11">Korean</span><div class="skill-bar"><div class="skill-fill" style="width:100%"></div></div></div>
-<div class="skill-item"><span class="skill-name" data-sk="sk12">English</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
-<div class="skill-item"><span class="skill-name" data-sk="sk13">Special Education Teacher Certificate,<br>GR 1 (Highest)</span><div class="skill-bar"><div class="skill-fill" style="width:100%"></div></div></div>
-<div class="skill-item"><span class="skill-name" data-sk="sk14">Korean Language Teacher License,<br>LV 2 (Intermediate)</span><div class="skill-bar"><div class="skill-fill" style="width:100%"></div></div></div>
-<div class="skill-item"><span class="skill-name" data-sk="sk15">M.Ed. Educational Technology &amp; Instructional System Design (Yonsei University)</span><div class="skill-bar"><div class="skill-fill" style="width:100%"></div></div></div>
-</div>
-</div>
-</div>
+<section class="ib" id="ib">
+  <div class="section-inner">
+    <div class="section-label" data-i="ib_label">Inclusive Practice</div>
+    <h2 class="section-title" data-i="ib_title">How I Embed Inclusion in School</h2>
+    <div class="ib-grid">
+      <div class="ib-card fade-in">
+        <div class="ib-card-title" data-i="ib1_title">Learning Skills Support</div>
+        <div class="ib-card-desc" data-i="ib1_desc">I embed learning skills development into support plans — helping students build the self-management, communication, and thinking skills they need to thrive independently.</div>
+      </div>
+      <div class="ib-card fade-in">
+        <div class="ib-card-title" data-i="ib2_title">Collaborative Unit Planning</div>
+        <div class="ib-card-desc" data-i="ib2_desc">I collaborate with teachers during unit planning to ensure differentiation is built in from the start — adapting assessment criteria, scaffolding inquiry tasks, and ensuring access to core concepts.</div>
+      </div>
+      <div class="ib-card fade-in">
+        <div class="ib-card-title" data-i="ib3_title">Assessment Access & Inclusion</div>
+        <div class="ib-card-desc" data-i="ib3_desc">I coordinate assessment access arrangements across subjects and support students to manage the academic demands of secondary school alongside their individual learning needs.</div>
+      </div>
+      <div class="ib-card fade-in">
+        <div class="ib-card-title" data-i="ib4_title">Whole-Learner Approach</div>
+        <div class="ib-card-desc" data-i="ib4_desc">I design support that nurtures the whole learner — helping students become more reflective, open-minded, and resilient through structured, scaffolded experiences.</div>
+      </div>
+      <div class="ib-card fade-in">
+        <div class="ib-card-title" data-i="ib5_title">Inquiry & Access</div>
+        <div class="ib-card-desc" data-i="ib5_desc">I adapt inquiry-based tasks to ensure students with diverse needs can access and contribute — through modified entry points, visual scaffolds, and tiered questioning.</div>
+      </div>
+      <div class="ib-card fade-in">
+        <div class="ib-card-title" data-i="ib6_title">Whole-School Inclusion</div>
+        <div class="ib-card-desc" data-i="ib6_desc">I work beyond the individual to build inclusive school culture — sharing strategies school-wide, deepening a shared understanding of inclusion across the school, and supporting all teachers to feel confident and equipped.</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-<div class="contact-inner">
-<div class="section-label">Contact</div>
-<h2 class="section-title">Let's Connect</h2>
-<p class="contact-sub">Open to conversations about Learning Support and SEN roles at international schools, research collaboration, and inclusive education consulting.</p>
-<div class="contact-links">
-<a class="contact-link" href="mailto:etandrew@kshcm.net">✉ Email</a>
-<a class="contact-link" href="https://www.linkedin.com/in/andrew-lee-405530407/">in LinkedIn</a>
-<a class="contact-link" href="ls.html" data-i18n="contact_ls">Learning Support Page →</a>
-</div>
-</div>
+<section class="cta-section">
+  <div class="section-inner">
+    <div class="section-label" data-i="cta_label">Let's Talk</div>
+    <h2 class="section-title" data-i="cta_title">Open to Learning Support Roles</h2>
+    <p class="cta-sub" data-i="cta_sub">I am seeking Learning Support positions at international schools. I would welcome the opportunity to discuss how I can contribute to your school community.</p>
+    <div class="cta-links">
+      <a href="mailto:etandrew@kshcm.net" class="cta-link primary" data-i="cta_email">✉ Email Me</a>
+      <a href="https://www.linkedin.com/in/andrew-lee-405530407/" class="cta-link" data-i="cta_li">in LinkedIn</a>
+      <a href="portfolio.html" class="cta-link" data-i="cta_exp">Full Career Portfolio →</a>
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-<p>© 2026 Andrew (Hooseok) Lee</p>
-<div class="footer-name">Andrew Lee</div>
-<p>Ho Chi Minh City, Vietnam</p>
+  <p>© 2026 Andrew (Hooseok) Lee</p>
+  <div class="footer-name">Andrew Lee</div>
+  <p data-i="footer_loc">Ho Chi Minh City, Vietnam</p>
 </footer>
 
 <script>
@@ -586,174 +475,185 @@
   const i18n = {
     en: {
       pdf_btn: '⬇ Download PDF',
-      nav_about: 'About', nav_exp: 'Experience', nav_research: 'Research', nav_skills: 'Skills', nav_contact: 'Contact', nav_ls: 'Learning Support →',
-      hero_tag: 'Learning Support · Inclusive Education · SEN · EdTech',
-      hero_h1: 'Building <em>inclusive</em> communities<br>where every learner belongs',
-      hero_sub: 'Learning Support and Inclusive Education specialist with 15 years of classroom experience, published research, and EdTech expertise — currently supporting diverse learners at Korean International School Ho Chi Minh City, Vietnam.',
-      hero_btn1: 'View Experience', hero_btn2: 'Get in Touch',
-      stat1_label: 'Years Teaching', stat2_label: 'Publications', stat3_label: 'Countries',
-      about_label: 'About', about_title: 'Philosophy & Background',
-      about_quote: 'Where learning environments designed for all meet attentive, personalised support for each — inclusive education blossoms into culture.<br>That intersection — inside the classroom and beyond — is what I hope to build, together.',
-      about_p1: 'I am Andrew (Hooseok) Lee, a Learning Support and Inclusive Education specialist with over 15 years of experience across both national and international school settings. My practice is grounded in evidence-based SEN provision, differentiated instruction, and a deep commitment to making learning genuinely accessible for every student.',
-      about_p2: "At Korean International School Ho Chi Minh City, I design and lead the school's learning support program — working closely with classroom teachers, subject specialists, school counsellors, nurses, career advisors, administrators, and support staff to embed inclusive practice into the everyday fabric of school life. This cross-functional collaboration has been central to my work throughout my career, extending beyond the school gate to encompass universities, government agencies, local authorities, and businesses.",
-      about_p3: 'Alongside my practice, I lead domestic and international research on attitudes toward inclusive education — grounding everything I do in evidence and connecting classroom reality with the broader field.',
-      exp_label: 'Experience', exp_title: 'Career Timeline',
-      sec1: '① Teaching Career', sec2: '② Lead Teacher',
-      sec3: '③ Expert Panel & Consultancy', sec4: '④ Curriculum & Materials Development',
-      sec5: '⑤ Guest Lecturer & Trainer', sec6: '⑥ Professional Development',
-      t1_org: 'Korean International School Ho Chi Minh City · Vietnam',
-      t1_role: 'Special Education & Learning Support / Inclusive Education',
-      t1_desc: "Run the special education curriculum and inclusive education programme across primary and secondary levels, providing comprehensive learning support throughout. Work alongside classroom teachers, subject teachers, school counsellors, nurses, career advisors, administrators, and support staff to embed inclusive education into the daily life of the school. Design and implement individual learning plans, manage assessment accommodations, and develop and operate the career and vocational education programme. Brokered an institutional MOU between the National Centre for Special Education, Vietnam (NCSE) and KIS HCMC (2024).",
-      t2_org: 'Yonsei University Rehabilitation School · Seoul, Korea',
-      t2_role: 'Special Education Teacher',
-      t2_desc: "Taught special education across primary, secondary, and post-secondary levels including the post-school transition programme over a decade, supporting students with a wide range of disabilities and varying levels of need. Planned and led school-based professional learning communities in software education, AI-integrated instruction, and assistive technology, driving school-wide pedagogical innovation. Committed to inclusion that extends beyond the school gates, partnered with education authorities, universities, businesses, government agencies, and local communities to broker institutional agreements and support graduates' transitions into employment and society.",
-      t3_org: 'Special Education School · Korea',
-      t3_role: 'Learning Support Assistant — Social Service',
-      t3_desc: 'Completed 24 months of mandatory alternative military service in South Korea as a learning support assistant in a special education school. Provided direct in-class support to students with disabilities, gaining foundational experience in SEN environments that shaped a long-term commitment to inclusive education.',
-      e1_org: 'Seoul Metropolitan Office of Education & Seoul West District Office of Education · Korea',
-      e1_role: 'EdTech Lead Teacher',
-      e1_desc: "Designated as EdTech lead teacher by Seoul Metropolitan Office of Education and Seoul West District Office of Education over four consecutive years. As one of few special educators among predominantly general education teacher cohorts, collaborated closely with colleagues across subjects and roles to integrate digital tools and AI-based resources into diverse classroom settings, and contributed to city-wide AI education initiatives.",
-      e2_org: 'Seoul Metropolitan Office of Education · Korea',
-      e2_role: 'Software Education Lead School Coordinator',
-      e2_desc: "Coordinated school-wide software education initiatives as part of Seoul Metropolitan Office of Education's flagship software education programme. Designed and led a professional learning community focused on software-integrated instruction, supporting colleagues in embedding computational thinking and coding into special education curricula.",
-      e3_org: 'Seoul West District Office of Education · Korea',
-      e3_role: 'Teaching & Assessment Sharing Support Network',
-      e3_desc: "Served as a member of the Teaching and Assessment Sharing Support Network under Seoul West District Office of Education — often the sole special educator in a network of general teachers. Contributed to peer observation culture and collaborative professional reflection, sharing practical case studies on inclusive assessment design and instructional adaptation from a special education perspective.",
-      x1_org: 'National Institute of Special Education · Korea',
-      x1_role: 'Expert Advisor & Field Reviewer',
-      x1_desc: "Served across multiple advisory and review roles at the National Institute of Special Education. As a field applicability reviewer for digital textbooks, provided classroom-based perspectives on usability and improvement needs for students with disabilities. Served as an advisory committee member for the National Disability e-Festival. As an expert advisor on the science immersive content development project, provided advisory input on content planning and the design of interaction and motion elements suited to the needs and educational contexts of students with disabilities. Also contributed to the Assistive Technology Device Guidebook, introducing remote-control assistive technology devices in teacher-friendly language; the content was subsequently adopted as an official teacher training topic. In 2023, joined the EduAble Field Support Team — collaborating with general education teachers to develop teaching and learning materials for inclusive classrooms.",
-      x2_org: 'KERIS (Korea Education and Research Information Service) · Korea',
-      x2_role: 'Expert Advisor & Teacher Support Panel',
-      x2_desc: "Contributed across two consecutive programme cycles as an expert advisor for KERIS's EdTech startup–classroom matching programme, bridging the gap between EdTech solutions and the needs of real classroom settings. Provided a practitioner's perspective on selecting genuinely useful tools and reflecting user needs in UI and UX design decisions. Served as a teacher support panel member for the national online content-integrated textbook pilot. Developed and submitted special education and inclusive education teaching and learning materials to the EduNet ITDA platform, making resources accessible to teachers nationwide.",
-      c1_org: 'Ministry of Education, Republic of Korea',
-      c1_role: 'Textbook Author — English (Middle School)',
-      c1_desc: "Served as curriculum author for the official English textbook under the 2022 Revised Special Education National Curriculum, covering the middle school level. Authored accessible and practically oriented instructional content designed to strengthen real-life English communication skills for students with disabilities.",
-      g1_org: 'Schools, District Offices of Education & National Institute of Special Education · Korea',
-      g1_role: 'Guest Lecturer & Trainer',
-      g1_desc: "Served as a guest lecturer and trainer across a range of educational contexts. Delivered teacher training sessions for in-service educators at schools, district offices of education, and the National Institute of Special Education. Delivered lectures to undergraduate students in special education and social welfare programmes at university level. Also conducted disability awareness and empathy education sessions for students at general middle and high schools. Key topics included school-wide student support systems, learning support for students with disabilities, Positive Behavior Support (PBS), assistive technology, AI tools in education, and inclusive classroom practice.",
-      p1_org: 'Google Korea · Microsoft Korea · LG Discovery Lab · Seoul West District Office of Education',
-      p1_role: 'AI & EdTech Lead Teacher Capacity Building Programme',
-      p1_desc: "Completed intensive capacity building training for EdTech lead teachers, delivered jointly by Google Korea, Microsoft Korea, and LG Discovery Lab in partnership with Seoul Metropolitan Office of Education, covering AI-based educational tools, cloud learning environments, and future-ready classroom design. Subsequently presented as a trainer at the district-level AI & EdTech Future Education Sharing Forum (Seoul West District Office of Education, Oct 2023), facilitating knowledge transfer to peer teachers on AI integration in special education contexts.",
-      res_label: 'Research & Publications', res_title: 'Scholarly Work',
-      r1_type: 'Peer-Reviewed Research · In Progress',
-      r1_title: "Secondary Students' Attitudes Toward Inclusive Education: Instrument Development and Validation",
-      r1_meta: 'Lead Author · International collaborative research',
-      r1_status: 'Active Research',
-      r2_type: 'Government Publication · 2023–2024',
-      r2_title: '2022 Revised Special Education Curriculum: English Textbook (Middle School)',
-      r2_meta: 'Curriculum Author · Ministry of Education, Republic of Korea<br>Official textbook for the revised national special education curriculum',
-      r2_status: 'Published',
-      r3_type: 'Book · 2025',
-      r3_title: 'KIS 교육은 무엇이 특별한가<br><em style="font-size:0.95rem;font-weight:300;">(What Makes KIS Education Special)</em>',
-      r3_meta: 'Contributing Author<br>Reflections on Korean international school education in Vietnam',
-      r3_status: 'Published',
-      r4_type: 'Graduate Thesis · 2019',
-      r4_title: 'Development of a Career Education Program for Students with Disabilities Utilizing the Language Experience Approach',
-      r4_meta: 'M.Ed. in Educational Technology · Instructional System Design, Yonsei University<br>Focus: Career education · Language-based intervention design',
-      r4_status: 'Completed',
-      r5_type: 'Teaching Guide · 2019',
-      r5_title: 'Assistive Technology Device Guidebook (Swing Remo Guide)',
-      r5_meta: 'Contributing Author · National Institute of Special Education, Korea<br>Practical guide for teachers on remote-control assistive technology devices',
-      r5_status: 'Published',
-      skills_label: 'Skills & Competencies', skills_title: 'Areas of Expertise',
-      sg1: 'Learning Support & SEN', sg2: 'Research & Technology', sg3: 'Languages & Credentials',
-      sk1:'Instructional Adaptation · Differentiated Instruction', sk2:'IEP · Lesson Design · Assessment', sk3:'University Entrance Guidance (Grade 12)',
-      sk4:'Inclusive Education', sk5:'Career & Vocational Education',
-      sk6:'Statistical Analysis', sk7:'ML · XAI Application',
-      sk8:'EdTech Integration', sk9:'Curriculum & Educational Programme Development', sk10:'Digital Content Creation',
-      sk11:'Korean', sk12:'English',
-      sk13:'Special Education Teacher Certificate,<br>GR 1 (Highest)',
-      sk14:'Korean Language Teacher License,<br>LV 2 (Intermediate)',
-      sk15:'M.Ed. Educational Technology & Instructional System Design (Yonsei University)',
-      contact_label: 'Contact', contact_title: "Let's Connect",
-      contact_sub: 'Open to conversations about Learning Support and SEN roles at international schools, research collaboration, and inclusive education consulting.',
-      contact_email: '✉ Email', contact_li: 'in LinkedIn', contact_ls: 'Learning Support Page →',
+      nav_approach: 'Approach', nav_practice: 'Practice', nav_skills: 'Skills',
+      nav_ib: 'Inclusive Practice', nav_full: 'Full Experience →',
+      hero_badge: 'Learning Support · Inclusive Education · International School',
+      hero_h1: 'Where every learner finds their way in —<br>and every teacher feels <em>equipped to help.</em>',
+      hero_sub: 'I am Andrew (Hooseok) Lee — a Learning Support specialist with 15 years of experience across national and international school settings, supporting learners from primary through to secondary transition — covering the full school range. I work alongside classroom teachers to ensure every student can access, engage with, and make progress in their learning.',
+      hero_btn1: 'See My Practice', hero_btn2: 'Full Experience',
+      card_label: 'Learning Support Philosophy',
+      card_quote: 'Where learning environments designed for all meet attentive, personalised support for each — inclusive education blossoms into culture.<br><br>That intersection — inside the classroom and beyond — is what I hope to build, together.',
+
+      cases_label: 'Case Examples', cases_title: 'Learning Support Across Grade Levels',
+      case_barrier: 'Barrier Identified', case_strategy: 'Support Strategy', case_outcome: 'Outcome',
+      c1_grade: 'Elementary · Grade 3',
+      c1_title: 'Improving Task Engagement and Independent Completion',
+      c1_barrier: 'Executive function challenges affecting task organisation and sustained attention, resulting in low task completion and disengagement.',
+      c1_strategy: 'Implemented structured scaffolding during whole-class instruction in collaboration with the classroom teacher, including step-by-step task breakdown with self-monitoring checklists, visual task sequencing, and scheduled check-in points to support task initiation and completion.',
+      c1_outcome: 'Over an 8-week intervention period, task completion increased from approximately 50% to 80%. The student demonstrated improved engagement and independence, with reduced reliance on adult prompting. These improvements were sustained with reduced support and generalised across classroom contexts. The student shared that having a checklist made it easier to know what to do next.',
+      c2_grade: 'Middle School · Grade 7',
+      c2_title: 'Improving Reading Comprehension and Academic Engagement',
+      c2_barrier: 'Limited vocabulary knowledge and underdeveloped reading strategies affecting identification of key ideas and access to subject content, leading to reduced engagement and delayed task completion.',
+      c2_strategy: 'Provided targeted vocabulary pre-teaching and explicit instruction in reading strategies such as prediction, summarisation, and question generation. Structured graphic organisers were used to support text analysis, with support embedded within subject lessons through collaboration with classroom teachers.',
+      c2_outcome: 'Over a 10-week intervention period, the student demonstrated improved ability to identify and summarise key ideas, with increased engagement in class discussions. Task completion time decreased, and the student independently applied reading strategies across subjects. These improvements were sustained with reduced support and transferred across subject areas. The student said the graphic organiser helped them see how the text was put together — “It was like having a map before I started reading.”',
+      c3_grade: 'High School · Grade 11',
+      c3_title: 'Improving Essay Writing and Independent Learning',
+      c3_barrier: 'Limited understanding of essay structure and underdeveloped self-regulated learning skills, including planning, time management, and revision processes, resulting in frequent submission delays.',
+      c3_strategy: 'Provided explicit instruction in essay structure and argument development, supported by paragraph frames and writing scaffolds. Introduced milestone-based task management including draft, feedback, and revision stages, and aligned support with assessment criteria through collaboration with subject teachers.',
+      c3_outcome: 'Over a 12-week intervention period, assignment submission delays were significantly reduced, and the student demonstrated improved organisation and clarity in written work. The student showed increased independence in planning, drafting, and revising in alignment with assessment expectations. These improvements were sustained with reduced support. The student reflected that having clear milestones made the writing process feel more manageable — each stage felt achievable.',
+      approach_label: 'My Approach', approach_title: 'How I Support Learners',
+      a1_title: 'Design for Access',
+      a1_desc: 'I apply Universal Design for Learning (UDL) principles to ensure that instructional materials, tasks, and assessments are accessible to all learners before barriers arise — not as an afterthought.',
+      a2_title: 'Collaborate to Include',
+      a2_desc: "Effective inclusion happens through teacher partnership. I work alongside subject teachers to co-plan lessons, adapt curriculum, modify assessments, and deliver in-class support through co-teaching.",
+      a3_title: 'Personalise with Purpose',
+      a3_desc: "I develop and implement Individual Learning Plans (ILPs) aligned with classroom objectives, monitor student progress through formative assessment, and adjust strategies to meet each learner's evolving needs.",
+      practice_label: 'In Practice', practice_title: 'What I Actually Do',
+      p1_label: 'Co-Teaching & In-Class Support', p1_title: 'Inside and Beyond the Classroom',
+      p1_desc: 'I work flexibly across push-in and pull-out models — co-teaching alongside subject teachers in the classroom, or providing targeted small-group support in a separate space, depending on what each student and situation needs.',
+      p2_label: 'Collaborative Planning', p2_title: 'Designing Inclusive Units Together',
+      p2_desc: 'I work with classroom teachers during unit planning to embed differentiation and access strategies from the outset — modifying assessments, creating tiered tasks, and aligning support with broader skill development goals.',
+      p3_label: 'ILP Development & Monitoring', p3_title: 'Individualised Support that Connects to Class',
+      p3_desc: 'I develop Individual Learning Plans grounded in classroom objectives, not isolated from them. Plans are communicated to all subject teachers and reviewed regularly, ensuring support is consistent, purposeful, and evidence-informed.',
+      p4_label: 'Assessment Accommodation', p4_title: 'Ensuring Fair Access to Assessment',
+      p4_desc: 'I coordinate assessment accommodations across all subjects — including extended time, modified format, and assistive technology provision — ensuring students can demonstrate their understanding without being disadvantaged by their learning barriers.',
+      p5_label: 'Family & Stakeholder Communication', p5_title: 'Understanding the Learner Together',
+      p5_desc: 'I maintain regular communication with families, counsellors, colleagues, and external specialists to build a complete and shared understanding of each learner — ensuring that support is coherent across school and home contexts.',
+      p6_label: 'Teacher Capacity Building', p6_title: 'Growing Together with Teachers',
+      p6_desc: 'I see teacher development as core to my role. I share strategies, model inclusive practices, and build shared language around differentiation and access — so that inclusive practice becomes embedded in school culture, not dependent on a single LS or special educator.',
+      skills_label: 'Skills & Competencies', skills_title: 'What I Bring to the Role',
+      sg1: 'Learning Support Practice', sg2: 'Collaboration & School Community',
+      sg3: 'Research & Evidence-Based Practice', sg4: 'Credentials',
+      sk1: 'Differentiated Instruction & Instructional Adaptation',
+      sk2: 'Universal Design for Learning (UDL) Implementation',
+      sk3: 'Individual Learning Plan (ILP) Development & Monitoring',
+      sk4: 'In-Class Support & Co-Teaching',
+      sk5: 'Assessment Accommodation & Modification',
+      sk6: 'Formative Assessment & Progress Monitoring',
+      sk7: 'Positive Behavior Support (PBS)',
+      sk8: 'Collaborative Planning with Subject Teachers',
+      sk9: 'Cross-departmental Inclusive Practice',
+      sk10: 'Family Communication & Partnership',
+      sk11: 'Liaison with External Specialists',
+      sk12: 'Teacher Capacity Building & Coaching',
+      sk13: 'School-wide Student Support System Design',
+      sk14: 'Learning Design & Instructional Systems Thinking',
+      sk15: 'Educational Research & Data-Informed Practice',
+      sk16: 'Curriculum Development & Programme Design',
+      sk17: 'ML · XAI Application in Educational Contexts',
+      sk18: 'EdTech Integration & Digital Tool Selection',
+      sk19: '15 Years Teaching — National & International Settings',
+      sk20: 'Special Education Teacher Certificate, GR 1 (Highest)',
+      sk21: 'M.Ed. Educational Technology & Instructional System Design',
+      sk22: 'Korean Language Teacher License, LV 2',
+      sk23: 'Active Researcher — Inclusive Education',
+      ib_label: 'Inclusive Practice', ib_title: 'How I Embed Inclusion in School',
+      ib1_title: 'Approaches to Learning Support',
+      ib1_desc: 'I embed learning skills development into support plans — helping students build the self-management, communication, and thinking skills they need to thrive independently.',
+      ib2_title: 'Unit & Lesson Planning',
+      ib2_desc: 'I collaborate with teachers during unit planning to ensure differentiation is built in from the start — adapting assessment criteria, scaffolding inquiry tasks, and ensuring access to core concepts.',
+      ib3_title: 'Assessment Design & Accommodation',
+      ib3_desc: "I coordinate assessment access arrangements across subjects and support students to manage the academic demands of secondary school alongside their individual learning needs.",
+      ib4_title: 'Whole-Learner Approach',
+      ib4_desc: 'I design support that nurtures the whole learner — helping students become more reflective, open-minded, and resilient through structured, scaffolded experiences.',
+      ib5_title: 'Inquiry & Access',
+      ib5_desc: 'I adapt inquiry-based tasks to ensure students with diverse needs can access and contribute — through modified entry points, visual scaffolds, and tiered questioning.',
+      ib6_title: 'Whole-School Inclusion',
+      ib6_desc: 'I work beyond the individual to build inclusive school culture — sharing strategies school-wide, deepening a shared understanding of inclusion across the school, and supporting all teachers to feel confident and equipped.',
+      cta_label: "Let's Talk", cta_title: 'Open to Learning Support Roles',
+      cta_sub: 'I am seeking Learning Support positions at international schools. I would welcome the opportunity to discuss how I can contribute to your school community.',
+      cta_email: '✉ Email Me', cta_li: 'in LinkedIn', cta_exp: 'Full Career Portfolio →',
       footer_loc: 'Ho Chi Minh City, Vietnam',
     },
     ko: {
-      pdf_btn: '⬇ PDF 다운로드',
-      nav_about: '소개', nav_exp: '경력', nav_research: '연구', nav_skills: '역량', nav_contact: '연락', nav_ls: '학습지원 →',
-      hero_tag: '학습지원 · 통합교육 · 특수교육 · 에듀테크',
-      hero_h1: '모든 학생이 <span style="color:var(--gold-light)">함께</span> 배우는<br><span style="color:var(--gold-light)">교육 공동체</span>를 만들어갑니다',
-      hero_sub: '15년 교육 현장 경험과 연구 역량, 에듀테크 전문성을 갖춘 학습지원 및 통합교육 전문가 — 현재 베트남 호치민 한국국제학교에서 다양한 학습자를 지원하고 있습니다.',
-      hero_btn1: '경력 보기', hero_btn2: '연락하기',
-      stat1_label: '년 교육 경력', stat2_label: '출판 저작물', stat3_label: '근무 국가',
-      about_label: '소개', about_title: '교육 철학 및 배경',
-      about_quote: '모두를 위한 학습 환경과 개별 학습자를 위한 섬세한 지원이 맞닿는 곳에서 통합교육은 문화로 피어납니다.<br>그 접점을 교실 안팎에서 함께 만들어가고 싶습니다.',
-      about_p1: '저는 교사 이후석(Andrew Lee)입니다. 국내외 교육 현장에서 15년 이상 학습지원 및 통합교육 전문가로 활동해 왔습니다. 근거 기반 특수교육 실천, 수준별 교수, 그리고 모든 학생에게 진정한 학습 기회를 제공하겠다는 신념이 저의 교육 실천을 이끌고 있습니다.',
-      about_p2: '교직 전반에 걸쳐 교내 다양한 구성원과 협업하며 통합교육 문화를 만들어왔습니다. 학교 울타리 너머로도 대학, 정부기관, 지역자치단체, 기업 등 국내외 다양한 이해관계자들과 협력해 온 경험이 저의 실천을 더욱 풍부하게 해왔습니다.',
-      about_p3: '이러한 현장 실천과 함께, 통합교육에 관한 국내외 연구를 주도하며 근거 기반의 시각을 교육 실천에 연결하고 있습니다.',
-      exp_label: '경력', exp_title: '주요 경력',
-      sec1: '① 교직 경력', sec2: '② 선도교사',
-      sec3: '③ 전문가 자문 및 지원단', sec4: '④ 교육과정 및 교재 개발',
-      sec5: '⑤ 연수 및 강의', sec6: '⑥ 전문성 개발',
-      t1_org: '한국국제학교 호치민 · 베트남',
-      t1_role: '특수학급 운영 및 학습지원 · 통합교육',
-      t1_desc: '초·중·고 전 학년에 걸쳐 특수교육 교육과정과 통합교육 프로그램을 운영하며 포괄적인 학습지원을 제공하고 있습니다. 통합학급 담임교사, 교과교사, 보건·상담·진로교사, 관리자, 행정직원 등 교내 다양한 구성원과 협업하여 통합교육을 학교의 일상 속에 뿌리내리고 있습니다. 개별 학습지원 계획을 수립·실행하고, 장애학생을 위한 평가 조정을 총괄하며, 진로직업교육 프로그램을 개발·운영합니다. 2024년에는 베트남 국립특수교육센터(NCSE)와 KIS HCMC 간 업무협약(MOU) 체결을 주도하여 국제 협력 기반을 마련하였습니다.',
-      t2_org: '연세대학교 재활학교 · 서울',
-      t2_role: '특수교사',
-      t2_desc: '초·중·고 및 전공과 전 급별에 걸쳐 다양한 장애 유형과 지원 수준의 학생들을 10년 이상 지도하였습니다. 소프트웨어 교육, AI 활용 수업, 보조공학 분야의 교내 교원학습공동체를 기획·운영하며 학교 전체의 수업 혁신을 주도하였습니다. 장애학생이 학교와 사회에 온전히 통합될 수 있도록, 교육 당국, 대학, 기업, 정부기관, 지역사회 등 교외 다양한 기관과 협력하여 업무협약 체결 및 졸업생 취업 연계 등 교실 밖에서도 실질적인 변화를 만들어왔습니다.',
-      t3_org: '특수학교 · 대한민국 (사회복무)',
-      t3_role: '학습보조원 (사회복무요원)',
-      t3_desc: '특수학교에서 사회복무요원으로 24개월간 학습보조원으로 복무하며 장애학생의 수업 참여와 일상생활을 직접 지원하였습니다. 담당 교사와 긴밀히 협력하여 개별 학생의 행동 지원 및 학습 보조를 수행하였고, 이 경험은 특수교육 현장에 대한 이해를 넓히고, 통합교육에 대한 장기적 헌신의 출발점이 되었습니다.',
-      e1_org: '서울특별시교육청 · 서울서부교육지원청',
-      e1_role: '에듀테크 선도교사',
-      e1_desc: '서울특별시교육청 및 서울서부교육지원청으로부터 4년 연속 에듀테크 선도교사로 지정되었습니다. 주로 일반 교사들로 구성된 교사 집단에서 소수의 특수교사로서 참여하며, 교과·비교과 등 다양한 역할의 교사들과 긴밀히 협업하였습니다. AI 디지털교과서 활용, 에듀테크 도구의 교실 적용, AI 기반 수업 설계 등을 함께 실천하였으며, 서울형 AI 수업 사업에도 기여하였습니다.',
-      e2_org: '서울특별시교육청',
-      e2_role: '소프트웨어교육 선도학교 담당교사',
-      e2_desc: '서울특별시교육청 소프트웨어교육 선도학교 사업에 참여하여 학교 전체의 소프트웨어 교육을 기획·운영하였습니다. 소프트웨어 연계 수업을 주제로 교원학습공동체를 구성·운영하며, 특수교육 맥락에서 코딩 및 컴퓨팅 사고력 교육을 실천하였습니다. 동료 교사들이 소프트웨어 연계 수업을 교육과정 안에 녹일 수 있도록 실질적인 지원을 제공하였습니다.',
-      e3_org: '서울서부교육지원청',
-      e3_role: '수업·평가나눔 교사지원단',
-      e3_desc: '서울서부교육지원청 수업·평가나눔 교사지원단으로 활동하였습니다. 일반 교사 중심의 지원단에서 소수의 특수교사로서 참여하여, 수업 공개 및 동료 교사 간 나눔 문화 형성에 기여하였습니다. 통합교육 맥락의 평가 설계와 수업 혁신 사례를 특수교육의 관점에서 공유하며, 동료 교사들과 협력적 성찰 문화를 함께 만들어 갔습니다.',
-      x1_org: '국립특수교육원',
-      x1_role: '전문가 자문 및 현장 검토위원',
-      x1_desc: '국립특수교육원의 다양한 자문·검토 업무에 참여하였습니다. 장애학생용 디지털교과서 현장적합성 검토위원으로서 실제 교실 현장의 관점에서 활용 가능성과 개선 방향을 검토하였으며, 전국장애학생 e페스티벌 자문위원으로도 활동하였습니다. 과학실감형콘텐츠 개발 사업에서는 특수교육 대상자의 필요와 교육적 맥락에 따른 콘텐츠 기획 및 상호작용과 모션 설계 방향을 자문하였습니다. 보조공학기기 교재 집필에 참여하여 원격제어 보조공학기기의 기능과 교실 활용 방법을 교사 중심의 언어로 소개하였으며, 해당 내용은 국립특수교육원 주최 교사 연수 주제로 채택되어 연수를 직접 진행하였습니다. 2023년에는 에듀에이블 현장지원단으로 합류하여 통합학급 일반교사의 교수적 수정을 지원하기 위한 교수학습자료 개발 과정에서 일반교사들과 긴밀히 협업하였습니다.',
-      x2_org: '한국교육학술정보원(KERIS)',
-      x2_role: '전문가 자문단 · 교사지원단',
-      x2_desc: 'KERIS 에듀테크 창업기업-교육현장 매칭 프로그램 전문가 자문단으로 2개년 연속 활동하며, 에듀테크 솔루션과 교육 현장의 요구를 연결하는 역할을 수행하였습니다. 교실 현장에서 실제 유용한 도구를 선별하고 사용자의 필요를 UI와 UX 설계에 반영하는 실천적 관점을 제공하였습니다. 온라인 콘텐츠 활용 교과서 시범학교 교사지원단으로도 참여하여 현장 교사들의 실제 적용을 지원하였습니다. 에듀넷 ITDA 플랫폼에 특수교육·통합교육 교수학습자료를 개발·탑재하여 전국 특수교사 및 일반교사가 활용할 수 있도록 하였습니다.',
-      c1_org: '교육부 (대한민국)',
-      c1_role: '교과용도서 집필위원 — 생활영어 (중학교)',
-      c1_desc: '2022 개정 특수교육 국가 교육과정에 따른 중학교 생활영어 교과용도서 집필위원으로 참여하였습니다. 장애학생의 실생활 영어 의사소통 역량 강화를 목표로 접근성과 실용성을 갖춘 교수·학습 내용을 집필하였으며, 현행 통합교육 교육과정 설계 원칙을 반영한 내용을 담았습니다.',
-      g1_org: '각급 학교 · 시도교육청 · 국립특수교육원',
-      g1_role: '연수 및 강의',
-      g1_desc: '다양한 교육 현장에서 연수 강사 및 강의자로 활동하였습니다. 각급 학교, 교육지원청, 국립특수교육원에서 현직 교사 대상 직무연수를 진행하였으며, 특수교육학과 및 사회복지학과 학부생 대상 강의도 진행하였습니다. 일반 중·고등학교 학생 대상 장애인식 및 공감교육 강의도 실시하였습니다. 주요 주제는 학교 차원의 학생 지원 체계, 장애학생을 위한 학습지원, 긍정적 행동지원(PBS), 보조공학기기 활용, AI 교육 도구 활용, 통합교육 실천 사례 등입니다.',
-      p1_org: '구글 코리아 · 한국마이크로소프트 · LG디스커버리랩 · 서울서부교육지원청',
-      p1_role: 'AI·에듀테크 선도교사 역량강화 연수',
-      p1_desc: '구글 코리아, 한국마이크로소프트, LG디스커버리랩이 서울시교육청과 협력하여 운영한 에듀테크 선도교사 역량강화 연수를 이수하였습니다. AI 기반 교육 도구, 클라우드 학습 환경, 미래형 수업 설계 등을 집중적으로 학습하였으며, 각 기업의 교육 플랫폼을 특수교육 맥락에 적용하는 방법을 심도 있게 탐구하였습니다. 이후 서울서부교육지원청 주관 AI·에듀테크 미래교육 공유마당(2023.10)에서 강사로 참여하여 특수교육 현장에서의 AI 도구 활용 사례를 동료 교사들과 나누었습니다.',
-      res_label: '연구 및 출판', res_title: '학술 성과',
-      r1_type: '동료심사 연구 · 진행 중',
-      r1_title: '통합교육 태도 검사도구 개발 및 타당화 연구',
-      r1_meta: '제1저자 · 국제 공동 연구',
-      r1_status: '진행 중',
-      r2_type: '정부 간행물 · 2023–2024',
-      r2_title: '2022 개정 특수교육 교육과정 교과용도서: 영어 (중학교)',
-      r2_meta: '집필위원 · 교육부 (대한민국)<br>국가 특수교육 교육과정 공식 교과서',
-      r2_status: '출판 완료',
-      r3_type: '단행본 · 2025',
-      r3_title: 'KIS 교육은 무엇이 특별한가',
-      r3_meta: '공동 집필<br>베트남 한국국제학교 교육에 관한 성찰',
-      r3_status: '출판 완료',
-      r4_type: '석사학위 논문 · 2019',
-      r4_title: '언어경험접근법 활용 장애학생 진로교육 프로그램 개발 연구',
-      r4_meta: '교육공학 석사 · 연세대학교<br>주제: 진로교육 · 언어 기반 중재 설계',
-      r4_status: '완료',
-      r5_type: '교사용 지도서 · 2019',
-      r5_title: '보조공학기기 교재 (스윙리모 가이드북)',
-      r5_meta: '공동 저자 · 국립특수교육원<br>원격제어 보조공학기기 교실 활용 교사용 실무 지침서',
-      r5_status: '출판 완료',
-      skills_label: '역량', skills_title: '전문 분야',
-      sg1: '학습지원 및 특수교육', sg2: '연구 및 기술', sg3: '언어 및 자격',
-      sk1:'교수적합화 · 맞춤형 수업', sk2:'IEP · 수업 설계 · 평가 조정', sk3:'고3 한국 대학 입시 지도',
-      sk4:'통합교육', sk5:'진로직업교육',
-      sk6:'통계분석', sk7:'ML · XAI 활용',
-      sk8:'에듀테크 활용', sk9:'교육과정 및 교육프로그램 개발', sk10:'디지털 콘텐츠 제작',
-      sk11:'한국어', sk12:'영어',
-      sk13:'특수교육(중등) 정교사 1급',
-      sk14:'한국어교원 2급',
-      sk15:'교육공학·교수설계 석사 (연세대학교)',
-      contact_label: '연락', contact_title: '함께 이야기해요',
-      contact_sub: '국제학교 학습지원 및 특수교육 포지션, 연구 협력, 통합교육 컨설팅에 관해 언제든지 연락 주세요.',
-      contact_email: '✉ 이메일', contact_li: 'in 링크드인', contact_ls: '학습지원 역량 페이지 →',
+      nav_approach: '접근', nav_practice: '실천', nav_skills: '역량',
+      nav_ib: '통합교육 실천', nav_full: '전체 경력 →',
+      hero_badge: '학습지원 · 통합교육 · 국제학교',
+      hero_h1: '모든 학생이 배움의 문을 열 수 있고,<br>모든 교사가 <em>그 열쇠를 가질 수 있도록.</em>',
+      hero_sub: '국내외 교육 현장에서 15년 이상 학습지원 전문가로 활동해 왔습니다. 초등학교부터 고등학교, 전환기(전공과) 학생까지 전 학년에 걸친 교육 경험을 바탕으로, 모든 학생이 배움에 온전히 참여하고 성장할 수 있도록 교실 교사들과 함께 실질적인 변화를 만들어가고 있습니다.',
+      hero_btn1: '실천 보기', hero_btn2: '전체 경력',
+      card_label: '학습지원 철학',
+      card_quote: '모두를 위한 학습 환경과 개별 학습자를 위한 섬세한 지원이 맞닿는 곳에서 통합교육은 문화로 피어납니다.<br><br>그 접점을 교실 안팎에서 함께 만들어가고 싶습니다.',
+
+      cases_label: '지원 사례', cases_title: '학년별 학습지원 사례',
+      case_barrier: '확인된 장벽', case_strategy: '지원 전략', case_outcome: '결과',
+      c1_grade: '초등학교 · 3학년',
+      c1_title: '과제 참여 및 독립적 완수 향상',
+      c1_barrier: '과제 조직화와 지속적 집중력에 영향을 미치는 실행 기능의 어려움으로 인해 과제 완수율이 낮고 수업 이탈이 잦았습니다.',
+      c1_strategy: '담임교사와 협력하여 전체 수업 중 구조화된 발판을 적용했습니다. 자기 점검 체크리스트를 활용한 단계별 과제 분해, 시각적 과제 순서 제공, 과제 시작과 완수를 지원하는 정기 체크인 지점을 설계하였습니다.',
+      c1_outcome: '8주간의 중재를 통해 과제 완수율이 약 50%에서 80%로 향상됐습니다. 학생은 독립적 참여도가 높아지고 성인의 직접적 촉구에 대한 의존도가 줄었습니다. 이러한 향상은 지원이 줄어든 상태에서도 유지되었으며, 다양한 수업 맥락에 걸쳐 일반화됐습니다. 학생은 "체크리스트가 있으니까 다음에 뭘 해야 할지 알 수 있어서 좋았어요"라고 했습니다.',
+      c2_grade: '중학교 · 7학년',
+      c2_title: '독해력 및 학습 참여도 향상',
+      c2_barrier: '제한된 어휘 지식과 미발달된 읽기 전략으로 인해 핵심 내용 파악과 교과 내용 접근이 어려웠으며, 수업 참여 저하와 과제 지연으로 이어졌습니다.',
+      c2_strategy: '핵심 어휘 사전 학습과 예측·요약·질문 생성 등 읽기 전략을 명시적으로 지도했습니다. 텍스트 분석을 지원하기 위해 구조화된 그래픽 오거나이저를 활용하였으며, 교과교사와 협력하여 지원을 교과 수업 안에 자연스럽게 녹여냈습니다.',
+      c2_outcome: '10주간의 중재를 통해 핵심 내용을 파악하고 요약하는 능력이 향상됐으며, 수업 중 토론 참여도도 높아졌습니다. 과제 완수 시간이 단축됐으며, 학생은 여러 교과에 걸쳐 읽기 전략을 독립적으로 적용하기 시작했습니다. 이러한 향상은 지원이 줄어든 상태에서도 유지됐습니다. 학생은 "그래픽 오거나이저를 쓰니까 글이 어떻게 구성되어 있는지 보였어요. 읽기 전에 지도 같은 게 생긴 느낌이었어요"라고 했습니다.',
+      c3_grade: '고등학교 · 11학년',
+      c3_title: '에세이 작성 및 독립적 학습 향상',
+      c3_barrier: '에세이 구조에 대한 이해 부족과 미발달된 자기조절학습 역량 — 계획, 시간 관리, 수정 과정 포함 — 으로 인해 제출 지연이 잦았습니다.',
+      c3_strategy: '에세이 구조와 논증 전개에 대한 명시적 지도를 실시하고, 단락 프레임과 작문 발판을 제공했습니다. 초안·피드백·수정 단계를 포함한 마일스톤 기반 과제 관리를 도입하고, 교과교사와 협력하여 평가 기준에 맞춘 피드백을 연계했습니다.',
+      c3_outcome: '12주간의 중재를 통해 과제 제출 지연이 현저히 감소했으며, 작문의 구성과 명확성이 향상됐습니다. 학생은 평가 기준에 부합하는 방식으로 계획·초안 작성·수정을 독립적으로 수행하는 능력이 향상됐습니다. 이러한 향상은 지원이 줄어든 상태에서도 유지됐습니다. 학생은 "단계별로 나눠서 하니까 막막하지 않고 뭘 해야 할지 보였어요"라고 했습니다.',
+      approach_label: '접근 방식', approach_title: '어떻게 학습자를 지원하는가',
+      a1_title: '처음부터 설계하는 접근성',
+      a1_desc: '보편적 학습 설계(UDL) 원칙을 바탕으로, 수업 자료·과제·평가가 모든 학생에게 처음부터 열려 있도록 설계합니다. 장벽이 생긴 뒤에 수습하는 것이 아니라, 애초에 장벽이 생기지 않도록 구조 자체를 바꿉니다.',
+      a2_title: '교사와 함께, 통합을 만들다',
+      a2_desc: '통합교육은 특수교사 혼자 이루어낼 수 없습니다. 교과교사와 함께 수업을 설계하고, 교육과정을 조정하며, 평가를 수정하고, 코티칭으로 실질적인 지원을 교실 안으로 가져옵니다.',
+      a3_title: '의미 있는 개별 지원',
+      a3_desc: '개별 학습계획(ILP)은 교실 목표와 동떨어진 문서가 아니라, 수업 안에서 살아 숨쉬어야 합니다. 학생의 진전을 지속적으로 살피고, 필요가 달라질 때마다 지원 전략도 함께 조정합니다.',
+      practice_label: '현장 실천', practice_title: '학교에서 실제로 하는 일',
+      p1_label: '코티칭 · 학급 내 지원', p1_title: '교실 안팎에서',
+      p1_desc: '수업 상황에 따라 교과교사와 함께 교실 안으로 들어가는 push-in 방식과, 별도 공간에서 소규모로 지원하는 pull-out 방식을 유연하게 운영합니다.',
+      p2_label: '협력적 수업 설계', p2_title: '처음부터 함께 만드는 수업',
+      p2_desc: '단원 계획 단계에서부터 교과교사와 협력하여 수준별 지도와 접근 전략이 처음부터 수업 안에 녹아들도록 합니다. 평가 수정, 단계별 과제 구성, 학생의 역량 발달 목표와 지원을 자연스럽게 연결합니다.',
+      p3_label: 'ILP 개발 · 모니터링', p3_title: '교실과 이어지는 개별 지원',
+      p3_desc: '개별 학습계획은 교실 목표와 따로 놀지 않아야 합니다. 계획을 모든 교과 교사와 공유하고 정기적으로 함께 검토하며, 지원이 일관성 있고 실질적인 변화로 이어지도록 합니다.',
+      p4_label: '평가 접근성 보장', p4_title: '학생이 제대로 보여줄 수 있도록',
+      p4_desc: '연장 시간, 형식 수정, 보조공학 활용 등 전 교과에 걸쳐 평가 조정을 총괄합니다. 학습의 어려움이 아닌, 학생이 실제로 알고 있는 것이 평가에서 드러날 수 있도록 하는 것이 목표입니다.',
+      p5_label: '가정 · 외부 전문가 소통', p5_title: '학생을 함께 이해하기',
+      p5_desc: '가족, 상담교사, 동료 교사, 외부 전문가와 꾸준히 소통하며 각 학생에 대한 입체적인 이해를 함께 만들어갑니다. 학교와 가정에서의 지원이 따로 놀지 않고 하나의 흐름으로 이어지도록 합니다.',
+      p6_label: '교사 역량 강화', p6_title: '교사와 함께 성장하기',
+      p6_desc: '교사 전문성 개발을 제 역할의 핵심으로 여깁니다. 실천 가능한 전략을 나누고, 통합적 수업을 함께 모델링하며, 학교 안에 공통 언어를 만들어갑니다. 통합교육이 특수교사 또는 학습지원 교사 한 명에게 달려있지 않고, 학교 문화 자체가 되도록 하는 것이 목표입니다.',
+      skills_label: '역량', skills_title: '전문 역량',
+      sg1: '학습지원 실천', sg2: '협력 및 학교 공동체',
+      sg3: '연구 및 근거 기반 실천', sg4: '자격 및 경력',
+      sk1: '교수적합화 · 수준별 교수',
+      sk2: '보편적 학습 설계(UDL) 적용',
+      sk3: '개별 학습계획(ILP) 개발 및 모니터링',
+      sk4: '학급 내 지원 및 코티칭',
+      sk5: '평가 조정 및 수정',
+      sk6: '형성평가 및 진전도 모니터링',
+      sk7: '긍정적 행동지원(PBS)',
+      sk8: '교과교사와의 협력적 수업 계획',
+      sk9: '교과 간 통합교육 실천',
+      sk10: '가정 소통 및 파트너십',
+      sk11: '외부 전문가 연계',
+      sk12: '교사 역량 강화 및 코칭',
+      sk13: '학교 차원의 학생 지원 체계 설계',
+      sk14: '학습 설계 및 교수 시스템적 사고',
+      sk15: '교육 연구 및 데이터 기반 실천',
+      sk16: '교육과정 및 교육프로그램 개발',
+      sk17: 'ML · XAI 교육적 활용',
+      sk18: '에듀테크 통합 및 디지털 도구 선별',
+      sk19: '15년 교직 경험 — 국내외 학교',
+      sk20: '특수교육(중등) 정교사 1급',
+      sk21: '교육공학·교수설계 석사 (연세대학교)',
+      sk22: '한국어교원 2급',
+      sk23: '통합교육 학술 연구',
+      ib_label: '통합교육 실천', ib_title: '학교 안에 통합을 뿌리내리는 방법',
+      ib1_title: '학습 접근 방식 지원',
+      ib1_desc: '지원 계획 안에 학습 역량 개발을 자연스럽게 녹여냅니다. 자기 관리, 소통, 사고력을 키워 학생들이 점점 더 스스로 배울 수 있도록 돕습니다.',
+      ib2_title: '단원 및 수업 계획',
+      ib2_desc: '단원 계획 단계에서 교사들과 함께, 처음부터 수준별 지도가 설계에 담기도록 합니다. 평가 기준 조정, 탐구 과제 발판 구성, 핵심 개념에 대한 접근성을 확보합니다.',
+      ib3_title: '평가 설계 및 조정',
+      ib3_desc: '전 교과에 걸쳐 평가 접근 편의를 조율합니다. 학업적 부담과 개별 학습 필요 사이에서 균형을 찾을 수 있도록 학생 곁에서 함께합니다.',
+      ib4_title: '학습자 전체를 보는 눈',
+      ib4_desc: '학습의 어려움만 보는 것이 아니라, 학생 전체를 봅니다. 구조화된 발판 경험을 통해 학생들이 더 성찰적이고 회복력 있는 학습자로 성장할 수 있도록 지원합니다.',
+      ib5_title: '탐구와 접근성',
+      ib5_desc: '탐구 기반 과제를 다양한 필요에 맞게 조정합니다. 수정된 진입점, 시각적 발판, 단계별 질문을 활용하여 모든 학생이 탐구에 참여하고 기여할 수 있도록 합니다.',
+      ib6_title: '학교 전체의 통합',
+      ib6_desc: '개별 학생 지원을 넘어, 통합이 학교 문화가 되도록 노력합니다. 실천 전략을 동료 교사들과 나누고, 통합교육에 대한 학교 전체의 이해를 함께 넓혀가며, 누구나 통합교육에 자신 있게 임할 수 있는 환경을 만들어갑니다.',
+      cta_label: '연락해요', cta_title: '학습지원 포지션을 찾고 있습니다',
+      cta_sub: '해외 국제학교 학습지원 포지션을 찾고 있습니다. 귀 학교에 어떻게 기여할 수 있을지, 편하게 연락 주세요.',
+      cta_email: '✉ 이메일', cta_li: 'in 링크드인', cta_exp: '전체 경력 포트폴리오 →',
       footer_loc: '베트남 호치민시',
     }
   };
@@ -763,56 +663,16 @@
   function applyLang(lang) {
     const t = i18n[lang];
     document.documentElement.lang = lang;
-    document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if(t[k]) el.textContent = t[k]; });
-    document.querySelector('.hero-tag').textContent = t.hero_tag;
-    document.querySelector('.hero h1').innerHTML = t.hero_h1;
-    document.querySelector('.hero-sub').textContent = t.hero_sub;
-    const btns = document.querySelectorAll('.hero-cta a');
-    if(btns[0]) btns[0].textContent = t.hero_btn1;
-    if(btns[1]) btns[1].textContent = t.hero_btn2;
-    const sl = document.querySelectorAll('.stat-label');
-    if(sl[0]) sl[0].textContent = t.stat1_label;
-    if(sl[1]) sl[1].textContent = t.stat2_label;
-    if(sl[2]) sl[2].textContent = t.stat3_label;
-    const ab = document.querySelector('#about');
-    if(ab) {
-      ab.querySelector('.section-label').textContent = t.about_label;
-      ab.querySelector('.section-title').textContent = t.about_title;
-      ab.querySelector('.philosophy-text').innerHTML = t.about_quote;
-      const ps = ab.querySelectorAll('.about-body p');
-      if(ps[0]) ps[0].textContent = t.about_p1;
-      if(ps[1]) ps[1].textContent = t.about_p2;
-      if(ps[2]) ps[2].textContent = t.about_p3;
-    }
-    const ex = document.querySelector('#experience');
-    if(ex) { ex.querySelector('.section-label').textContent = t.exp_label; ex.querySelector('.section-title').textContent = t.exp_title; }
-    document.querySelectorAll('[data-sec]').forEach(el => { const k=el.getAttribute('data-sec'); if(t[k]) el.textContent = t[k]; });
-    document.querySelectorAll('[data-org]').forEach(el => { const k=el.getAttribute('data-org'); if(t[k]) el.textContent = t[k]; });
-    document.querySelectorAll('[data-role]').forEach(el => { const k=el.getAttribute('data-role'); if(t[k]) el.textContent = t[k]; });
-    document.querySelectorAll('[data-desc]').forEach(el => { const k=el.getAttribute('data-desc'); if(t[k]) el.innerHTML = t[k]; });
-    const rs = document.querySelector('#research');
-    if(rs) { rs.querySelector('.section-label').textContent = t.res_label; rs.querySelector('.section-title').textContent = t.res_title; }
-    document.querySelectorAll('[data-rtype]').forEach(el => { const k=el.getAttribute('data-rtype'); if(t[k]) el.textContent = t[k]; });
-    document.querySelectorAll('[data-rtitle]').forEach(el => { const k=el.getAttribute('data-rtitle'); if(t[k]) el.innerHTML = t[k]; });
-    document.querySelectorAll('[data-rmeta]').forEach(el => { const k=el.getAttribute('data-rmeta'); if(t[k]) el.innerHTML = t[k]; });
-    document.querySelectorAll('[data-rstatus]').forEach(el => { const k=el.getAttribute('data-rstatus'); if(t[k]) el.textContent = t[k]; });
-    const sk = document.querySelector('#skills');
-    if(sk) { sk.querySelector('.section-label').textContent = t.skills_label; sk.querySelector('.section-title').textContent = t.skills_title; }
-    document.querySelectorAll('[data-sg]').forEach(el => { const k=el.getAttribute('data-sg'); if(t[k]) el.textContent = t[k]; });
-    document.querySelectorAll('[data-sk]').forEach(el => { const k=el.getAttribute('data-sk'); if(t[k]) el.innerHTML = t[k]; });
-    const ct = document.querySelector('#contact .contact-inner');
-    if(ct) {
-      ct.querySelector('.section-label').textContent = t.contact_label;
-      ct.querySelector('.section-title').textContent = t.contact_title;
-      ct.querySelector('.contact-sub').textContent = t.contact_sub;
-      const lk = ct.querySelectorAll('.contact-link');
-      if(lk[0]) lk[0].textContent = t.contact_email;
-      if(lk[1]) lk[1].textContent = t.contact_li;
-    }
-    const fp = document.querySelectorAll('footer p');
-    if(fp[1]) fp[1].textContent = t.footer_loc;
-    document.getElementById('langFlag').textContent = lang==='en' ? '🇰🇷' : '🇬🇧';
-    document.getElementById('langLabel').textContent = lang==='en' ? 'KO' : 'EN';
+    document.querySelectorAll('[data-i]').forEach(el => {
+      const k = el.getAttribute('data-i');
+      if (t[k] !== undefined) el.textContent = t[k];
+    });
+    document.querySelectorAll('[data-i-html]').forEach(el => {
+      const k = el.getAttribute('data-i-html');
+      if (t[k] !== undefined) el.innerHTML = t[k];
+    });
+    document.getElementById('langFlag').textContent = lang === 'en' ? '🇰🇷' : '🇬🇧';
+    document.getElementById('langLabel').textContent = lang === 'en' ? 'KO' : 'EN';
   }
 
   function toggleLang() {
