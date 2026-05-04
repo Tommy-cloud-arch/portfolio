@@ -217,7 +217,7 @@
 </head>
 <body><!-- NAV -->
 <div class="pdf-btn-wrap">
-  <button class="pdf-btn" onclick="window.print()" data-i="pdf_btn">⬇ Download PDF</button>
+  <button class="pdf-btn" onclick="window.location.href='PF.pdf'" data-i="pdf_btn">⬇ Download PDF</button>
 </div>
 <nav>
 <a href="index.html" style="text-decoration:none;"><div class="nav-logo">Andrew <span>Lee</span></div></a>
@@ -227,7 +227,7 @@
 <li><a data-i18n="nav_research" href="#research">Research</a></li>
 <li><a data-i18n="nav_skills" href="#skills">Skills</a></li>
 <li><a data-i18n="nav_contact" href="#contact">Contact</a></li>
-<li><a href="ls.html" style="color:var(--gold);" data-i18n="nav_ls">LS Page →</a></li>
+<li><a href="ls.html" style="color:var(--gold);" data-i18n="nav_ls">Learning Support →</a></li>
 </ul>
 <div class="lang-switcher" id="langToggle" onclick="toggleLang()">
 <span class="lang-flag" id="langFlag">🇰🇷</span>
@@ -586,7 +586,7 @@
   const i18n = {
     en: {
       pdf_btn: '⬇ Download PDF',
-      nav_about: 'About', nav_exp: 'Experience', nav_research: 'Research', nav_skills: 'Skills', nav_contact: 'Contact', nav_ls: 'LS Page →',
+      nav_about: 'About', nav_exp: 'Experience', nav_research: 'Research', nav_skills: 'Skills', nav_contact: 'Contact', nav_ls: 'Learning Support →',
       hero_tag: 'Learning Support · Inclusive Education · SEN · EdTech',
       hero_h1: 'Building <em>inclusive</em> communities<br>where every learner belongs',
       hero_sub: 'Learning Support and Inclusive Education specialist with 15 years of classroom experience, published research, and EdTech expertise — currently supporting diverse learners at Korean International School Ho Chi Minh City, Vietnam.',
@@ -672,7 +672,7 @@
     },
     ko: {
       pdf_btn: '⬇ PDF 다운로드',
-      nav_about: '소개', nav_exp: '경력', nav_research: '연구', nav_skills: '역량', nav_contact: '연락', nav_ls: 'LS 페이지 →',
+      nav_about: '소개', nav_exp: '경력', nav_research: '연구', nav_skills: '역량', nav_contact: '연락', nav_ls: '학습지원 →',
       hero_tag: '학습지원 · 통합교육 · 특수교육 · 에듀테크',
       hero_h1: '모든 학생이 <span style="color:var(--gold-light)">함께</span> 배우는<br><span style="color:var(--gold-light)">교육 공동체</span>를 만들어갑니다',
       hero_sub: '15년 교육 현장 경험과 연구 역량, 에듀테크 전문성을 갖춘 학습지원 및 통합교육 전문가 — 현재 베트남 호치민 한국국제학교에서 다양한 학습자를 지원하고 있습니다.',
