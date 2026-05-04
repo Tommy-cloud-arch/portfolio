@@ -118,6 +118,79 @@
   .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold); letter-spacing: 0.1em; }
 
   .timeline-desc, .about-body p, .research-meta, .hero-sub, .contact-sub { text-align: left; hyphens: auto; -webkit-hyphens: auto; word-spacing: -0.01em; overflow-wrap: break-word; }
+
+  .pdf-btn-wrap {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    display: flex; justify-content: flex-end;
+    padding: 0.6rem 4rem;
+    background: rgba(196,154,60,0.95);
+    pointer-events: none;
+  }
+  .pdf-btn {
+    pointer-events: all;
+    background: var(--navy);
+    color: var(--cream);
+    border: none;
+    padding: 0.45rem 1.2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .pdf-btn:hover { background: #1a2f4a; }
+  nav { top: 2.4rem; }
+  @media (max-width: 900px) { .pdf-btn-wrap { padding: 0.6rem 2rem; } nav { top: 2.4rem; } }
+
+  /* PRINT */
+  @media print {
+    nav, .lang-switcher, .hero-cta, .cta-links, .pdf-btn-wrap, footer { display: none !important; }
+    body { background: white; color: black; }
+    .hero { background: white; min-height: auto; padding: 2rem 0; }
+    .hero h1 { color: #0f1e35; font-size: 2rem; }
+    .hero h1 em { color: #c49a3c; }
+    .hero-sub { color: #444; }
+    .hero-tag, .hero-badge { color: #c49a3c; }
+    .hero-card { background: #f5f5f5; border: 1px solid #ccc; }
+    .hero-card-quote { color: #333; }
+    .hero-stats, .hero-image { display: none; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-inner { grid-template-columns: 1fr; }
+    section { padding: 1.5rem 0; background: white !important; }
+    .section-title { color: #0f1e35 !important; font-size: 1.4rem; }
+    .section-label { color: #c49a3c; }
+    .approach-card, .research-card { background: white; border: 1px solid #ddd; break-inside: avoid; }
+    .practice-item { border: 1px solid #ddd; break-inside: avoid; background: white; }
+    .practice-item-title { color: #0f1e35; }
+    .practice-item-desc { color: #444; }
+    .practice-item-label { color: #c49a3c; }
+    .ib-card { border-left: 2px solid #c49a3c; background: white; break-inside: avoid; }
+    .ib-card-title { color: #c49a3c; }
+    .ib-card-desc { color: #444; }
+    .skill-list li { color: #333; border-bottom: 1px solid #eee; }
+    .skill-group-title { color: #c49a3c; }
+    .timeline-role { color: #0f1e35; }
+    .timeline-desc { color: #444; }
+    .timeline-org { color: #666; }
+    .timeline-date { color: #c49a3c; }
+    .timeline-tag { background: white; border: 1px solid #c49a3c; color: #c49a3c; }
+    .timeline::before { background: #ddd; }
+    .experience, .skills, .practice, .ib { background: white !important; }
+    .experience .section-title, .skills .section-title, .practice .section-title, .ib .section-title { color: #0f1e35 !important; }
+    .skill-name { color: #333; }
+    .skill-bar { background: #eee; }
+    .case-item { break-inside: avoid; }
+    .case-title { color: #0f1e35; }
+    .case-block-label { color: #c49a3c; }
+    .case-block-text { color: #444; }
+    .case-outcome { background: #f9f6f0; border-left: 2px solid #c49a3c; }
+    .exp-light, .exp-dark { background: white !important; margin: 0; }
+    a { color: #0f1e35; text-decoration: none; }
+    .fade-in { opacity: 1 !important; transform: none !important; }
+  }
+
   .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.7s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
@@ -143,6 +216,9 @@
 </style>
 </head>
 <body><!-- NAV -->
+<div class="pdf-btn-wrap">
+  <button class="pdf-btn" onclick="window.print()" data-i="pdf_btn">⬇ Download PDF</button>
+</div>
 <nav>
 <a href="index.html" style="text-decoration:none;"><div class="nav-logo">Andrew <span>Lee</span></div></a>
 <ul class="nav-links">
@@ -509,6 +585,7 @@
 
   const i18n = {
     en: {
+      pdf_btn: '⬇ Download PDF',
       nav_about: 'About', nav_exp: 'Experience', nav_research: 'Research', nav_skills: 'Skills', nav_contact: 'Contact', nav_ls: 'LS Page →',
       hero_tag: 'Learning Support · Inclusive Education · SEN · EdTech',
       hero_h1: 'Building <em>inclusive</em> communities<br>where every learner belongs',
@@ -594,6 +671,7 @@
       footer_loc: 'Ho Chi Minh City, Vietnam',
     },
     ko: {
+      pdf_btn: '⬇ PDF 다운로드',
       nav_about: '소개', nav_exp: '경력', nav_research: '연구', nav_skills: '역량', nav_contact: '연락', nav_ls: 'LS 페이지 →',
       hero_tag: '학습지원 · 통합교육 · 특수교육 · 에듀테크',
       hero_h1: '모든 학생이 <span style="color:var(--gold-light)">함께</span> 배우는<br><span style="color:var(--gold-light)">교육 공동체</span>를 만들어갑니다',
