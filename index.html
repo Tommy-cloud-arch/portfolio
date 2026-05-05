@@ -35,15 +35,15 @@
 
   /* CARDS */
   .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 860px; width: 100%; opacity: 0; animation: fadeUp 0.8s 0.8s forwards; }
-  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(196,154,60,0.2); padding: 3rem; text-decoration: none; color: inherit; transition: all 0.35s; position: relative; overflow: hidden; text-align: left; }
+  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(196,154,60,0.2); padding: 3rem; text-decoration: none; color: inherit; transition: all 0.35s; position: relative; overflow: hidden; text-align: left; display: flex; flex-direction: column; }
   .card::before { content: ''; position: absolute; inset: 0; background: rgba(196,154,60,0.04); opacity: 0; transition: opacity 0.35s; }
   .card:hover { border-color: rgba(196,154,60,0.6); transform: translateY(-4px); }
   .card:hover::before { opacity: 1; }
   .card-tag { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
   .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; line-height: 1.2; color: var(--cream); margin-bottom: 1rem; }
   .card-title em { font-style: italic; color: var(--gold-light); }
-  .card-desc { font-size: 0.88rem; line-height: 1.8; color: rgba(245,240,232,0.55); margin-bottom: 1.8rem; }
-  .card-actions { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 1.5rem; }
+  .card-desc { font-size: 0.88rem; line-height: 1.8; color: rgba(245,240,232,0.55); margin-bottom: 1.8rem; flex: 1; }
+  .card-actions { display: flex; flex-direction: column; gap: 0.7rem; margin-top: auto; }
   .card-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); background: var(--gold); display: block; text-align: center; padding: 0.7rem 1.2rem; text-decoration: none; font-weight: 500; transition: background 0.3s; }
   .card-link:hover { background: var(--gold-light); }
   .card-pdf { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #ffffff !important; background: #5ba4cf !important; display: block; text-align: center; padding: 0.7rem 1.2rem; font-weight: 500; transition: background 0.3s; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; width: 100%; box-sizing: border-box; }
