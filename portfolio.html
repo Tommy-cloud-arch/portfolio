@@ -31,6 +31,28 @@
   .nav-links a:hover { color: var(--gold); }
   .lang-switcher { display: flex; align-items: center; gap: 0.4rem; cursor: pointer; padding: 0.4rem 0.8rem; border: 1px solid rgba(196,154,60,0.4); transition: all 0.3s; margin-left: 2rem; }
   .lang-switcher:hover { border-color: var(--gold); }
+  .nav-page-btn {
+    display: none;
+  }
+  @media (max-width: 900px) {
+    .nav-page-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-page-link {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.35rem 0.7rem;
+      text-decoration: none;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+  }
+
   .lang-flag { font-size: 1rem; }
   .lang-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
 
@@ -112,6 +134,8 @@
   .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
   .contact-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border: 1px solid rgba(15,30,53,0.2); color: var(--navy); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s; }
   .contact-link:hover { background: var(--navy); color: var(--cream); }
+  .contact-link.gold { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .contact-link.gold:hover { background: var(--gold-light); }
 
   footer { background: var(--navy); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; }
   footer p { font-size: 0.78rem; color: rgba(245,240,232,0.3); }
@@ -229,6 +253,9 @@
 <li><a data-i18n="nav_contact" href="#contact">Contact</a></li>
 <li><a href="ls.html" style="color:var(--gold);" data-i18n="nav_ls">Learning Support →</a></li>
 </ul>
+<div class="nav-page-btn">
+    <a href="ls.html" class="nav-page-link">Learning Support →</a>
+  </div>
 <div class="lang-switcher" id="langToggle" onclick="toggleLang()">
 <span class="lang-flag" id="langFlag">🇰🇷</span>
 <span class="lang-label" id="langLabel">KO</span>
@@ -565,7 +592,7 @@
 <div class="contact-links">
 <a class="contact-link" href="mailto:etandrew@kshcm.net">✉ Email</a>
 <a class="contact-link" href="https://www.linkedin.com/in/andrew-lee-405530407/">in LinkedIn</a>
-<a class="contact-link" href="ls.html" data-i18n="contact_ls">Learning Support Page →</a>
+<a class="contact-link gold" href="ls.html" data-i18n="contact_ls">Learning Support Page →</a>
 </div>
 </div>
 </section>
@@ -667,7 +694,7 @@
       sk15:'M.Ed. Educational Technology & Instructional System Design (Yonsei University)',
       contact_label: 'Contact', contact_title: "Let's Connect",
       contact_sub: 'Open to conversations about Learning Support and SEN roles at international schools, research collaboration, and inclusive education consulting.',
-      contact_email: '✉ Email', contact_li: 'in LinkedIn', contact_ls: 'Learning Support Page →',
+      contact_email: '✉ Email', contact_li: 'in LinkedIn', contact_ls: 'Learning Support →',
       footer_loc: 'Ho Chi Minh City, Vietnam',
     },
     ko: {
@@ -753,7 +780,7 @@
       sk15:'교육공학·교수설계 석사 (연세대학교)',
       contact_label: '연락', contact_title: '함께 이야기해요',
       contact_sub: '국제학교 학습지원 및 특수교육 포지션, 연구 협력, 통합교육 컨설팅에 관해 언제든지 연락 주세요.',
-      contact_email: '✉ 이메일', contact_li: 'in 링크드인', contact_ls: '학습지원 역량 페이지 →',
+      contact_email: '✉ 이메일', contact_li: 'in 링크드인', contact_ls: '학습지원 →',
       footer_loc: '베트남 호치민시',
     }
   };
