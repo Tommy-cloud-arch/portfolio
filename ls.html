@@ -21,6 +21,28 @@
   .nav-links a:hover { color: var(--gold); }
   .lang-switcher { display: flex; align-items: center; gap: 0.4rem; cursor: pointer; padding: 0.4rem 0.8rem; border: 1px solid rgba(196,154,60,0.4); transition: all 0.3s; margin-left: 2rem; }
   .lang-switcher:hover { border-color: var(--gold); }
+  .nav-page-btn {
+    display: none;
+  }
+  @media (max-width: 900px) {
+    .nav-page-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-page-link {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.35rem 0.7rem;
+      text-decoration: none;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+  }
+
   .lang-flag { font-size: 1rem; }
   .lang-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
   .hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; padding: 8rem 4rem 5rem; position: relative; overflow: hidden; }
@@ -73,6 +95,8 @@
   .cta-sub { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; max-width: 560px; margin-left: auto; margin-right: auto; }
   .cta-links { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
   .cta-link { padding: 0.9rem 2rem; border: 1px solid rgba(15,30,53,0.25); color: var(--navy); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.3s; }
+  .cta-link.gold { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .cta-link.gold:hover { background: var(--gold-light); }
   .cta-link:hover { background: var(--navy); color: var(--cream); }
   .cta-link.primary { background: var(--gold); color: var(--navy); border-color: var(--gold); }
   .cta-link.primary:hover { background: var(--gold-light); }
@@ -197,6 +221,9 @@
     <li><a href="#ib" data-i="nav_ib">Inclusive Practice</a></li>
     <li><a href="portfolio.html" data-i="nav_full">Full Experience →</a></li>
   </ul>
+  <div class="nav-page-btn">
+    <a href="portfolio.html" class="nav-page-link">Portfolio →</a>
+  </div>
   <div class="lang-switcher" onclick="toggleLang()">
     <span class="lang-flag" id="langFlag">🇰🇷</span>
     <span class="lang-label" id="langLabel">KO</span>
@@ -467,7 +494,7 @@
     <div class="cta-links">
       <a href="mailto:etandrew@kshcm.net" class="cta-link primary" data-i="cta_email">✉ Email Me</a>
       <a href="https://www.linkedin.com/in/andrew-lee-405530407/" class="cta-link" data-i="cta_li">in LinkedIn</a>
-      <a href="portfolio.html" class="cta-link" data-i="cta_exp">Full Career Portfolio →</a>
+      <a href="portfolio.html" class="cta-link gold" data-i="cta_exp">Full Career Portfolio →</a>
     </div>
   </div>
 </section>
