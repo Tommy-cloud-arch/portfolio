@@ -18,11 +18,10 @@
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; }
   .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 0.05em; }
   .nav-logo span { color: var(--gold); }
-  .lang-switcher { display: flex; align-items: center; cursor: pointer; padding: 0.4rem 0.9rem; border: 1px solid rgba(196,154,60,0.4); transition: all 0.3s; }
-  .lang-switcher:hover { border-color: var(--gold); background: rgba(196,154,60,0.08); }
-  .lang-label { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
-  .lang-label::before { content: '[ '; }
-  .lang-label::after { content: ' ]'; }
+  .lang-switcher { display: flex; align-items: center; cursor: pointer; padding: 0.35rem 1rem; border: 1px solid var(--gold); background: #fff; transition: all 0.3s; }
+  .lang-switcher:hover { background: var(--gold); }
+  .lang-switcher:hover .lang-label { color: var(--navy); }
+  .lang-label { font-size: 0.75rem; letter-spacing: 0.05em; text-transform: none; color: var(--navy); font-weight: 600; }
 
   /* HERO */
   .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 8rem 4rem 4rem; text-align: center; position: relative; }
@@ -71,7 +70,7 @@
 <nav>
   <div class="nav-logo">Andrew <span>Lee</span></div>
   <div class="lang-switcher" onclick="toggleLang()">
-    <span class="lang-label" id="langLabel">KO</span>
+    <span class="lang-label" id="langLabel">한국어</span>
   </div>
 </nav>
 
@@ -160,7 +159,7 @@
       const k = el.getAttribute('data-i-html');
       if (t[k] !== undefined) el.innerHTML = t[k];
     });
-    document.getElementById('langLabel').textContent = lang === 'en' ? 'KO' : 'EN';
+    document.getElementById('langLabel').textContent = lang === 'en' ? '한국어' : 'English';
     const btnIds = ['card1_link','card1_pdf','card2_link','card2_pdf'];
     btnIds.forEach(id => {
       const el = document.getElementById(id);
