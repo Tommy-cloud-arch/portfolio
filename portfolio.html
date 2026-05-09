@@ -29,8 +29,8 @@
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a { color: rgba(245,240,232,0.7); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
   .nav-links a:hover { color: var(--gold); }
-  .lang-switcher { display: flex; align-items: center; cursor: pointer; padding: 0.35rem 1rem; border: 1px solid var(--gold); background: #fff; transition: all 0.3s; margin-left: 2rem; }
-  .lang-switcher:hover { background: var(--gold); }
+  .lang-switcher { display: flex; align-items: center; gap: 0.4rem; cursor: pointer; padding: 0.35rem 1rem; border: 1px solid var(--gold); background: transparent; transition: all 0.3s; margin-left: 2rem; color: var(--cream); }
+  .lang-switcher:hover { background: var(--gold); color: var(--navy); }
   .lang-switcher:hover .lang-label { color: var(--navy); }
   .nav-page-btn {
     display: none;
@@ -54,7 +54,7 @@
     }
   }
 
-  .lang-label { font-size: 0.75rem; letter-spacing: 0.05em; text-transform: none; color: var(--navy); font-weight: 600; }
+  .lang-label { font-size: 0.75rem; letter-spacing: 0.05em; text-transform: none; color: inherit; font-weight: 600; }
 
   .hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; position: relative; overflow: hidden; padding: 8rem 4rem 4rem; }
   .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(135deg, transparent 40%, rgba(196,154,60,0.06) 100%); }
@@ -257,6 +257,7 @@
     <a href="ls.html" class="nav-page-link">Learning Support →</a>
   </div>
 <div class="lang-switcher" id="langToggle" onclick="toggleLang()">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
 <span class="lang-label" id="langLabel">한국어</span>
 </div>
 </nav>
