@@ -18,10 +18,10 @@
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; }
   .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 0.05em; }
   .nav-logo span { color: var(--gold); }
-  .lang-switcher { display: flex; align-items: center; cursor: pointer; padding: 0.35rem 1rem; border: 1px solid var(--gold); background: #fff; transition: all 0.3s; }
-  .lang-switcher:hover { background: var(--gold); }
+  .lang-switcher { display: flex; align-items: center; gap: 0.4rem; cursor: pointer; padding: 0.35rem 1rem; border: 1px solid var(--gold); background: transparent; transition: all 0.3s; color: var(--cream); }
+  .lang-switcher:hover { background: var(--gold); color: var(--navy); }
   .lang-switcher:hover .lang-label { color: var(--navy); }
-  .lang-label { font-size: 0.75rem; letter-spacing: 0.05em; text-transform: none; color: var(--navy); font-weight: 600; }
+  .lang-label { font-size: 0.75rem; letter-spacing: 0.05em; text-transform: none; color: inherit; font-weight: 600; }
 
   /* HERO */
   .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 8rem 4rem 4rem; text-align: center; position: relative; }
@@ -70,6 +70,7 @@
 <nav>
   <div class="nav-logo">Andrew <span>Lee</span></div>
   <div class="lang-switcher" onclick="toggleLang()">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
     <span class="lang-label" id="langLabel">한국어</span>
   </div>
 </nav>
